@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dip-lite-denoising"
+version = "0.1.0"
+description = "PyTorch U-Net model family for self-supervised temporal prediction in scientific imaging."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "DIP-LiteDenoising contributors"}]
+dependencies = [
+    "torch>=2.8",
+    "numpy>=2.0",
+    "h5py>=3.10",
+    "tifffile>=2024.0",
+    "nibabel>=5.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[project.urls]
+Repository = "https://github.com/Bohao-Ding/DIP-LiteDenoising"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
