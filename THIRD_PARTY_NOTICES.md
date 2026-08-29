@@ -39,6 +39,29 @@ following publications:
   Recognition*, 2020, pp. 1580–1589.
   https://doi.org/10.1109/CVPR42600.2020.00165.
 
+The experiment subpackage also uses independently implemented ideas attributed
+to the following works:
+
+- Zhang et al., “Beyond a Gaussian Denoiser: Residual Learning of Deep CNN for
+  Image Denoising” (DnCNN), arXiv:1608.03981.
+- Ding et al., “RepVGG: Making VGG-Style ConvNets Great Again,” CVPR 2021.
+- Chu et al., “NAFNet: Simple Baselines for Image Restoration,” ECCV 2022.
+- Chen et al., “Run, Don't Walk: Chasing Higher FLOPS for Faster Neural
+  Networks” (FasterNet), CVPR 2023.
+- Zhang et al., “FFDNet: Toward a Fast and Flexible Solution for CNN-Based
+  Image Denoising,” IEEE TIP 2018.
+- Zamir et al., “Restormer: Efficient Transformer for High-Resolution Image
+  Restoration,” CVPR 2022.
+- Tassano et al., “FastDVDnet: Towards Real-Time Deep Video Denoising Without
+  Flow Estimation,” CVPR 2020.
+- Li et al., “A Simple Baseline for Video Restoration With Grouped
+  Spatial-Temporal Shift,” CVPR 2023.
+
+No source code, weights or experiment configurations from these projects are
+included. `RepConv2d`, NAF-style blocks, grouped shifts and PixelUnshuffle-based
+models were written independently and are covered by numerical or contract
+tests in this repository. PyTorch's public `PixelUnshuffle` operator is used.
+
 These publications are cited for method and architecture attribution. The
 PyTorch implementation in this repository is released under `LICENSE`.
 
@@ -56,6 +79,12 @@ grant permission to redistribute the data. No Neurofinder TIFF files, complete
 frames or equivalent pixel arrays are included here. Users must obtain the
 recordings from the source provider and determine whether their intended use
 and redistribution comply with the provider's conditions.
+
+The repository's public evidence includes only non-pixel metrics, metadata and
+rendered figures. The portable `source_mapping.public.csv` is a documented
+derivative with repository-relative paths; the original machine-local mapping
+is excluded. See `docs/data_and_licensing.md` and
+`evidence/distribution_manifest.json` for hashes and redaction rules.
 
 ## Licence boundary
 

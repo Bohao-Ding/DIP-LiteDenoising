@@ -2,19 +2,20 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-DIP-LiteDenoising 是一个仅包含源码的 PyTorch 项目，用于实现和研究
+DIP-LiteDenoising 是一个紧凑的 PyTorch 项目，用于实现和研究
 DeepInterpolation 式自监督时间预测中的 U-Net 模型族。模型从目标中心帧两侧的邻近帧
 预测该中心帧，输入中明确排除中心帧。本仓库适用于科学图像序列的架构检查、模型开发、
 训练和推理。
 
-仓库不包含下载的数据集、预训练权重、论文评估程序、历史指标或训练结果。内置快速入口
-只验证模型、训练和推理链路能够运行，不用于复现论文中的性能结论。
+同一个 Python 包还包含冻结的 `paper_evidence_v1` 实验流程，以及 405 项容量研究和后续
+252 项目标函数—计算结构研究的轻量公开证据。仓库不包含下载的记录、预训练权重、
+checkpoint、预测帧或可恢复图像的数组。
 
 ## 项目意义
 
 高通量科学成像会持续产生长时间序列，模型容量、显存和设备执行效率可能成为数据处理的
 限制因素。本项目将论文中考察的网络宽度、深度和卷积单元整理为明确、可调用的 PyTorch
-模型族，使研究者能够在不携带历史实验结果的情况下选择和扩展模型容量。
+模型族，并将冻结协议、可执行实验流程和公开审计证据放在同一个仓库内。
 
 源码聚焦于三个可复用部分：
 
@@ -51,14 +52,24 @@ DeepInterpolation 式自监督时间预测中的 U-Net 模型族。模型从目�
 DIP-LiteDenoising/
 ├── examples/
 │   └── quickstart_synthetic.py
+├── configs/
+│   ├── paper_evidence_v1/  # 正式冻结的核心、机制与协议配置
+│   ├── exploratory/        # 非确认性的探索筛选配置
+│   └── splits/             # 公开拆分清单（不含像素）
+├── docs/                   # 技术报告、复现和数据边界
+├── evidence/
+│   ├── capacity_study_v1/  # 405 项训练的轻量证据
+│   └── paper_evidence_v1/  # 252 项训练的轻量证据
+├── scripts/                # 流程、绘图和清单核验脚本
 ├── src/deepinterpolation_improve/
 │   ├── config/       # 时间窗口、数据、训练和推理配置
 │   ├── data/         # 时序数据集、窗口处理和合成数据
 │   ├── inference/    # 保持帧顺序的 HDF5 推理
 │   ├── manifest/     # 运行记录和输入兼容性检查
 │   ├── models/       # U-Net 单元、注册表和论文模型族
-│   └── training/     # 损失函数、训练、断点及恢复
-├── tests/            # 模型、数据、训练和推理核心测试
+│   ├── training/     # 损失函数、训练、断点及恢复
+│   └── experiments/paper_evidence_v1/ # 集成的实验子包
+├── tests/            # 核心功能与实验合同测试
 ├── LICENSE
 ├── NOTICE.md
 ├── THIRD_PARTY_NOTICES.md
@@ -99,6 +110,47 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[test]"
 ```
+
+## 论文证据实验流程
+
+安装后，`dip-evidence` 与可复用核心使用同一个 Python 包。正式配置独立放在
+`configs/paper_evidence_v1/`，探索筛选配置放在 `configs/exploratory/`。
+
+不依赖本地记录即可检查源码与配置合同，并枚举冻结的核心矩阵：
+
+```powershell
+dip-evidence check
+dip-evidence paper-core --no-path-check
+```
+
+完整本地复跑时，先创建被 Git 忽略的机器路径文件，填写三个 Neurofinder 记录根目录，
+再核验记录与冻结拆分：
+
+```powershell
+Copy-Item configs/paths.example.json configs/paths.local.json
+dip-evidence data-check --paths configs/paths.local.json
+dip-evidence paper-core --paths configs/paths.local.json
+dip-evidence paper-mechanism --paths configs/paths.local.json
+```
+
+后两条命令默认只输出任务计划。核对任务快照后再添加 `--execute`；继续已有本地
+checkpoint 时添加 `--resume`。也可执行完整锁定流程：
+
+```powershell
+python scripts/run_paper_evidence_pipeline.py --paths configs/paths.local.json
+```
+
+无需训练或数据访问即可核验轻量公开证据：
+
+```powershell
+python scripts/build_distribution_manifest.py --check
+```
+
+公开路径派生文件为
+`evidence/paper_evidence_v1/tables/source_mapping.public.csv`。其中机器绝对路径已替换为
+仓库相对路径；该修订以及原私有证据清单的哈希均记录在
+`evidence/distribution_manifest.json`。详见[复现说明](docs/reproduction.md)和
+[完整中文技术报告](docs/technical_report.zh-CN.md)。
 
 ## 快速功能复现
 
@@ -287,7 +339,8 @@ InferenceRunner(
 - 使用 JSON 索引的电影集合；
 - 合成钙成像风格序列。
 
-本仓库不分发任何数据文件。使用外部数据集时，用户应自行检查其许可证和引用要求。
+本仓库不分发原始记录。`evidence/` 仅包含仓库作者生成的聚合、运行级或帧级指标、元数据
+与渲染图。使用外部数据集时，用户仍应自行检查其许可证和引用要求。
 
 ## 第三方数据与许可证边界
 
@@ -308,16 +361,17 @@ Allen 源码、Neurofinder 数据或其他第三方材料的权利。具体来�
 python -m pytest -q
 ```
 
-测试会在临时目录中创建数据和输出，覆盖九个模型变体、`compact_di` 别名、中心帧排除、
-数据顺序、断点恢复以及最小训练—推理链路。
+测试会在临时目录中创建数据和输出，覆盖可复用模型族、中心帧排除、数据顺序、断点恢复、
+集成实验模型、严格 state-dict 加载、冻结任务矩阵、路径覆盖与证据分析合同。
 
 ## 适用边界
 
 - 自监督训练中的中心目标帧是观测帧，不是干净真值图像。
 - 成功预测中心帧不能单独证明噪声已经被去除、生物信号得到保持或下游分析得到改善。
-- 本源码仓库不包含论文评估流程、公开数据下载、已训练权重或历史指标。
-- 快速入口只验证程序能够运行，不复现论文中的 PSNR、结构相似性或硬件速度结果。
+- 公开证据可以审计两项冻结的本地研究，但仍不包含训练 checkpoint、原始记录和预测帧。
+- 合成数据快速入口只验证程序能够运行；复现报告指标仍需外部记录并遵循冻结协议。
 - 实际性能和显存占用取决于时间窗口、图像尺寸、批量大小、PyTorch 版本和硬件。
+- `paper_evidence_v1` 的匹配评价片段曾在早期探索中被查看，不能表述为独立的选后测试集。
 
 ## 与 DeepInterpolation 的关系
 

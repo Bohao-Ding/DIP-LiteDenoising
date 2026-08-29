@@ -2,25 +2,27 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-DIP-LiteDenoising is a compact, source-only PyTorch implementation of the
+DIP-LiteDenoising is a compact PyTorch implementation of the
 U-Net model family studied for DeepInterpolation-style self-supervised temporal
 prediction. It predicts an observed centre frame from neighbouring frames while
 excluding the centre frame from the input. The repository is intended for
 architecture inspection, model development, training and inference on
 scientific image sequences.
 
-The repository contains no downloaded datasets, pretrained weights, paper
-evaluation code, archived metrics or training outputs. Its built-in quickstart
-checks that the model, training and inference paths work; it does not reproduce
-the performance claims of a paper.
+The same Python distribution also contains the locked `paper_evidence_v1`
+experiment workflow and lightweight public evidence for the 405-run capacity
+study and the later 252-run objective-by-computation study. It does not contain
+downloaded recordings, pretrained weights, checkpoints, predicted frames or
+recoverable image arrays.
 
 ## Why this project
 
 High-throughput scientific imaging produces long recordings whose analysis can
 be limited by model capacity, memory and device behaviour. This project exposes
 the tested width, depth and convolution-block choices as a small, explicit
-PyTorch model family. It supports controlled selection of model capacity
-without embedding evaluation results into the source repository.
+PyTorch model family. It supports controlled selection of model capacity and
+keeps the frozen experiment protocol, executable workflow and public audit
+evidence in one repository.
 
 The code focuses on three reusable components:
 
@@ -59,14 +61,24 @@ channels. The centre frame is always excluded.
 DIP-LiteDenoising/
 ├── examples/
 │   └── quickstart_synthetic.py
+├── configs/
+│   ├── paper_evidence_v1/  # Frozen core, mechanism and protocol contracts
+│   ├── exploratory/        # Non-confirmatory screen configurations
+│   └── splits/             # Published split manifests (no image pixels)
+├── docs/                   # Technical report, reproduction and data boundaries
+├── evidence/
+│   ├── capacity_study_v1/  # Lightweight evidence for 405 trained runs
+│   └── paper_evidence_v1/  # Lightweight evidence for 252 trained runs
+├── scripts/                # Pipeline, plotting and manifest verification
 ├── src/deepinterpolation_improve/
 │   ├── config/       # Window, dataset, training and inference configuration
 │   ├── data/         # Temporal datasets, windowing and synthetic data
 │   ├── inference/    # Ordered HDF5 inference
 │   ├── manifest/     # Run metadata and input compatibility checks
 │   ├── models/       # U-Net blocks, registry and the study model family
-│   └── training/     # Losses, training, checkpointing and resume support
-├── tests/            # Core model, data, training and inference tests
+│   ├── training/     # Losses, training, checkpointing and resume support
+│   └── experiments/paper_evidence_v1/ # Integrated experiment subpackage
+├── tests/            # Core and paper-evidence contract tests
 ├── LICENSE
 ├── NOTICE.md
 ├── THIRD_PARTY_NOTICES.md
@@ -109,6 +121,51 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[test]"
 ```
+
+## Paper-evidence workflow
+
+The installed `dip-evidence` command uses the same package as the reusable core.
+Formal configurations are isolated in `configs/paper_evidence_v1/`; exploratory
+screens are kept in `configs/exploratory/`.
+
+Audit the code/configuration contracts and enumerate the locked core matrix
+without local recordings:
+
+```powershell
+dip-evidence check
+dip-evidence paper-core --no-path-check
+```
+
+For a full local rerun, create an ignored machine-local path map, edit its three
+Neurofinder roots, then validate both the recordings and frozen splits:
+
+```powershell
+Copy-Item configs/paths.example.json configs/paths.local.json
+dip-evidence data-check --paths configs/paths.local.json
+dip-evidence paper-core --paths configs/paths.local.json
+dip-evidence paper-mechanism --paths configs/paths.local.json
+```
+
+The last two commands are dry plans. Add `--execute` only after checking their
+task snapshots; add `--resume` to continue existing local checkpoints. The
+complete locked sequence is also available as:
+
+```powershell
+python scripts/run_paper_evidence_pipeline.py --paths configs/paths.local.json
+```
+
+Verify the lightweight public evidence without training or data access:
+
+```powershell
+python scripts/build_distribution_manifest.py --check
+```
+
+The public path derivative is
+`evidence/paper_evidence_v1/tables/source_mapping.public.csv`. Its machine-local
+paths were replaced by repository-relative locations; the redaction and the
+original private-manifest hash are recorded in
+`evidence/distribution_manifest.json`. See [the reproduction guide](docs/reproduction.md)
+and [full technical report](docs/technical_report.md).
 
 ## Quick functional reproduction
 
@@ -304,8 +361,10 @@ The source package includes adapters for:
 - JSON-indexed movie collections;
 - synthetic calcium-like sequences.
 
-No data files are distributed in this repository. Users are responsible for
-checking the license and citation requirements of external datasets.
+No raw recording is distributed in this repository. The `evidence/` directory
+contains only repository-authored aggregate, run-level or frame-level metrics,
+metadata and rendered figures. Users remain responsible for checking the
+licence and citation requirements of external datasets.
 
 ## Third-party data and licence boundary
 
@@ -332,9 +391,9 @@ python -m pytest -q
 ```
 
 The tests create their data and outputs in temporary directories. They verify
-the nine model variants, the `compact_di` alias, centre-frame exclusion,
-dataset ordering, checkpoint/resume behaviour and the minimal training and
-inference path.
+the reusable model family, centre-frame exclusion, ordering, checkpoint/resume,
+the integrated experiment variants, strict state-dict loading, frozen task
+matrices, path overrides and evidence-analysis contracts.
 
 ## Scope and limitations
 
@@ -342,12 +401,15 @@ inference path.
   truth image.
 - Successful centre-frame prediction does not by itself prove noise removal,
   biological-signal preservation or improved downstream analysis.
-- This source-only repository does not include the paper evaluation pipeline,
-  public-dataset downloads, trained checkpoints or archived metrics.
-- The quickstart demonstrates software execution only. It does not reproduce
-  paper PSNR, structural-similarity or hardware-timing results.
+- Public evidence permits audit of the two frozen local studies, but trained
+  checkpoints, raw recordings and predicted frames remain excluded.
+- The synthetic quickstart demonstrates software execution only. Reproducing
+  reported measurements requires the external recordings and the frozen study
+  protocol.
 - Performance and memory use depend on the temporal window, image size, batch
   size, PyTorch build and hardware.
+- The matched evaluation segments in `paper_evidence_v1` had been inspected in
+  earlier exploration and are not an independent post-selection test set.
 
 ## Relationship to DeepInterpolation
 

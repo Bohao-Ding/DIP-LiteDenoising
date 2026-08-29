@@ -1,9 +1,10 @@
 # Project notice
 
-DIP-LiteDenoising is a new PyTorch implementation for studying compact U-Net
-model families in self-supervised temporal prediction. This repository does
-not contain or redistribute the legacy TensorFlow source code, pretrained
-models, datasets, or evaluation outputs from the Allen Institute
+DIP-LiteDenoising is an independent PyTorch implementation for studying compact
+U-Net model families in self-supervised temporal prediction. Its integrated
+`paper_evidence_v1` experiment package is also independently written. This
+repository does not contain or redistribute the legacy TensorFlow source code,
+pretrained models, datasets or evaluation outputs from the Allen Institute
 DeepInterpolation project.
 
 The method is inspired by:
@@ -17,10 +18,11 @@ https://github.com/AllenInstitute/deepinterpolation and is governed by its own
 licence, which includes restrictions that are not part of the MIT License. No
 rights to the Allen Institute source code are granted by this repository.
 
-The MIT License in `LICENSE` applies only to the original PyTorch source and
-documentation distributed in this repository. It does not grant rights to any
-third-party software, methods, publications or datasets. In particular,
-Neurofinder recordings are not distributed here. The source package can point
-to third-party download locations, but users must obtain those data from the
-provider and comply with the provider's terms. See
-`THIRD_PARTY_NOTICES.md` for method, architecture and dataset provenance.
+The MIT License in `LICENSE` applies to independently authored materials in
+this repository unless a file states otherwise. It does not grant rights to
+any third-party software, methods, publications or datasets. In particular,
+Neurofinder recordings are not distributed here. Public evidence contains only
+metrics, metadata and rendered figures; checkpoints, pixels and recoverable
+image arrays are excluded. Users must obtain third-party data from the provider
+and comply with the provider's terms. See `THIRD_PARTY_NOTICES.md` and
+`docs/data_and_licensing.md` for method, architecture and dataset provenance.
