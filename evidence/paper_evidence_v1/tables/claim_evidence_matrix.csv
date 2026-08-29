@@ -1,0 +1,5 @@
+claim_id,claim,primary_evidence,decision_rule,status
+C1,Training-objective effect at fixed full-resolution and subpixel inference graphs,tables/paired_effects_run_level.csv; tables/paired_effects_aggregate.csv,Report paired estimates and sensitivity intervals without significance or equivalence claims.,measured
+C2,Subpixel quality retention relative to the matched full-resolution MSE arm,tables/paired_effects_condition_level.csv,Mean delta >= -0.01 dB and minimum condition delta >= -0.03 dB.,supported
+C3,Quality return from the B8-D4 capacity reference relative to G4,tables/paired_effects_run_level.csv,Descriptive paired reconstruction evidence only.,measured
+C4,Device-specific batch-1 inference speed gain for G4 relative to G2,latency/subpixel_vs_fullres_batch1.csv,p50 ratio <= 0.75 in at least eight of nine conditions.,supported

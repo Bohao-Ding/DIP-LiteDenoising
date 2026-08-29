@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-08-29T00:19:15.740080+00:00",
+  "freeze_hash": "a723648a6ed1e510d65701b44a647b8fa6018dc0ad36474c3ebcec0fd9a71e74",
+  "stages": {
+    "paper_core": {
+      "selected": 225,
+      "completed_now": 4,
+      "skipped_completed": 221
+    },
+    "paper_mechanism": {
+      "selected": 27,
+      "completed_now": 27,
+      "skipped_completed": 0
+    },
+    "evaluation": {
+      "selected": 252,
+      "evaluated_now": 252,
+      "skipped_valid": 0
+    },
+    "latency": {
+      "schema_version": 1,
+      "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "conditions": 9,
+      "models": 5,
+      "rounds_per_protocol": 5,
+      "batch1_p50_ratios": [
+        {
+          "recording": "01.00",
+          "window": "w1",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.6378441864686568
+        },
+        {
+          "recording": "01.00",
+          "window": "w2",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.6845444341302923
+        },
+        {
+          "recording": "01.00",
+          "window": "w4",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.7447295172265807
+        },
+        {
+          "recording": "01.01",
+          "window": "w1",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.7306323111873213
+        },
+        {
+          "recording": "01.01",
+          "window": "w2",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.6831024891681079
+        },
+        {
+          "recording": "01.01",
+          "window": "w4",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.7478779486350889
+        },
+        {
+          "recording": "03.00",
+          "window": "w1",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.7070683593337671
+        },
+        {
+          "recording": "03.00",
+          "window": "w2",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.6812210569492715
+        },
+        {
+          "recording": "03.00",
+          "window": "w4",
+          "candidate": "paper_subpixel_b8d3_mse",
+          "baseline": "paper_fullres_b8d3_mse",
+          "p50_ratio": 0.678521986462198
+        }
+      ],
+      "speed_gate": {
+        "passed": true,
+        "threshold_ratio": 0.75,
+        "required_conditions": 8,
+        "passing_conditions": 9
+      }
+    },
+    "report": {
+      "schema_version": 1,
+      "protocol_name": "paper_evidence_v1",
+      "freeze_hash": "a723648a6ed1e510d65701b44a647b8fa6018dc0ad36474c3ebcec0fd9a71e74",
+      "training_tasks": 252,
+      "evaluated_tasks": 252,
+      "temporal_mean_conditions": 9,
+      "matched_evaluation_segments_disclosure": "The matched evaluation segments were inspected in prior exploratory work and are not claimed as an independent post-selection test set.",
+      "effect_aggregates": [
+        {
+          "effect": "capacity_reference",
+          "paired_runs": 45,
+          "mean_delta_psnr_db": 0.016852027774998904,
+          "sd_delta_psnr_db": 0.011918559973698886,
+          "median_delta_psnr_db": 0.01652073330349424,
+          "min_delta_psnr_db": -0.0046222397775359525,
+          "max_delta_psnr_db": 0.05065875197901981,
+          "positive_delta_count": 44,
+          "bootstrap_sensitivity_low_db": 0.004690523686220268,
+          "bootstrap_sensitivity_high_db": 0.02823684470842888
+        },
+        {
+          "effect": "mechanism_ctpf",
+          "paired_runs": 9,
+          "mean_delta_psnr_db": 0.002272214263757554,
+          "sd_delta_psnr_db": 0.00809265944767255,
+          "median_delta_psnr_db": 0.0004954309520606159,
+          "min_delta_psnr_db": -0.003397967287165571,
+          "max_delta_psnr_db": 0.02325363159179794,
+          "positive_delta_count": 5,
+          "bootstrap_sensitivity_low_db": -0.0019007027059060198,
+          "bootstrap_sensitivity_high_db": 0.010493920328092562
+        },
+        {
+          "effect": "mechanism_dense",
+          "paired_runs": 9,
+          "mean_delta_psnr_db": 0.0065209984328406835,
+          "sd_delta_psnr_db": 0.009053917169570937,
+          "median_delta_psnr_db": 0.0034864159191378974,
+          "min_delta_psnr_db": -0.0009125320999707753,
+          "max_delta_psnr_db": 0.025117533134691783,
+          "positive_delta_count": 8,
+          "bootstrap_sensitivity_low_db": 0.0006500122126716295,
+          "bootstrap_sensitivity_high_db": 0.015805246136784502
+        },
+        {
+          "effect": "mechanism_naf_lite",
+          "paired_runs": 9,
+          "mean_delta_psnr_db": 0.006112037076072083,
+          "sd_delta_psnr_db": 0.00783058335563333,
+          "median_delta_psnr_db": 0.003091109726957697,
+          "min_delta_psnr_db": -0.0002484061501242252,
+          "max_delta_psnr_db": 0.024464699716279625,
+          "positive_delta_count": 8,
+          "bootstrap_sensitivity_low_db": 0.0014842254438433382,
+          "bootstrap_sensitivity_high_db": 0.013918306031446035
+        },
+        {
+          "effect": "objective_fullres",
+          "paired_runs": 45,
+          "mean_delta_psnr_db": 0.245021884564196,
+          "sd_delta_psnr_db": 0.14889376202151577,
+          "median_delta_psnr_db": 0.1925414261994547,
+          "min_delta_psnr_db": 0.0890298496593136,
+          "max_delta_psnr_db": 0.45497427951721825,
+          "positive_delta_count": 45,
+          "bootstrap_sensitivity_low_db": 0.09718399998908073,
+          "bootstrap_sensitivity_high_db": 0.4451170296160998
+        },
+        {
+          "effect": "objective_subpixel",
+          "paired_runs": 45,
+          "mean_delta_psnr_db": 0.24347737329539829,
+          "sd_delta_psnr_db": 0.15223064538506853,
+          "median_delta_psnr_db": 0.19770470787497274,
+          "min_delta_psnr_db": 0.06388578703909076,
+          "max_delta_psnr_db": 0.45739270391918296,
+          "positive_delta_count": 45,
+          "bootstrap_sensitivity_low_db": 0.08830641061183096,
+          "bootstrap_sensitivity_high_db": 0.44590728344451963
+        },
+        {
+          "effect": "structure_mae",
+          "paired_runs": 45,
+          "mean_delta_psnr_db": -0.0020079599763252057,
+          "sd_delta_psnr_db": 0.01043959573072357,
+          "median_delta_psnr_db": -0.0020233828150573174,
+          "min_delta_psnr_db": -0.0275207196964935,
+          "max_delta_psnr_db": 0.019656916017886772,
+          "positive_delta_count": 22,
+          "bootstrap_sensitivity_low_db": -0.008497902992328867,
+          "bootstrap_sensitivity_high_db": 0.0036823602445184944
+        },
+        {
+          "effect": "structure_mse",
+          "paired_runs": 45,
+          "mean_delta_psnr_db": -0.0035524712451229035,
+          "sd_delta_psnr_db": 0.009050488619607694,
+          "median_delta_psnr_db": -0.0020918986376585735,
+          "min_delta_psnr_db": -0.039894312078303074,
+          "max_delta_psnr_db": 0.009912275132679227,
+          "positive_delta_count": 18,
+          "bootstrap_sensitivity_low_db": -0.011882833097437602,
+          "bootstrap_sensitivity_high_db": 0.0040904551079063755
+        },
+        {
+          "effect": "structure_objective_interaction",
+          "paired_runs": 45,
+          "mean_delta_psnr_db": -0.001544511268797698,
+          "sd_delta_psnr_db": 0.011398717315789252,
+          "median_delta_psnr_db": -0.001166709168941793,
+          "min_delta_psnr_db": -0.03646621126117289,
+          "max_delta_psnr_db": 0.02400546915390933,
+          "positive_delta_count": 21,
+          "bootstrap_sensitivity_low_db": -0.009125797632251145,
+          "bootstrap_sensitivity_high_db": 0.005124455164990989
+        }
+      ],
+      "engineering_gates": {
+        "quality_retention": {
+          "passed": true,
+          "equal_condition_mean_delta_psnr_db": -0.0035524712451229044,
+          "minimum_condition_delta_psnr_db": -0.019085770231304623
+        },
+        "quality_improvement": {
+          "passed": false,
+          "equal_condition_mean_delta_psnr_db": -0.0035524712451229044
+        },
+        "speed": {
+          "passed": true,
+          "threshold_ratio": 0.75,
+          "required_conditions": 8,
+          "passing_conditions": 9
+        }
+      },
+      "claim_scope": "noisy-centre-frame reconstruction fidelity and device-specific inference measurements only"
+    }
+  },
+  "figure6_generated": true
+}

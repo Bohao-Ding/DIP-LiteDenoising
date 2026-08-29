@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "conditions": 9,
+  "models": 5,
+  "rounds_per_protocol": 5,
+  "batch1_p50_ratios": [
+    {
+      "recording": "01.00",
+      "window": "w1",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.6378441864686568
+    },
+    {
+      "recording": "01.00",
+      "window": "w2",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.6845444341302923
+    },
+    {
+      "recording": "01.00",
+      "window": "w4",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.7447295172265807
+    },
+    {
+      "recording": "01.01",
+      "window": "w1",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.7306323111873213
+    },
+    {
+      "recording": "01.01",
+      "window": "w2",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.6831024891681079
+    },
+    {
+      "recording": "01.01",
+      "window": "w4",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.7478779486350889
+    },
+    {
+      "recording": "03.00",
+      "window": "w1",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.7070683593337671
+    },
+    {
+      "recording": "03.00",
+      "window": "w2",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.6812210569492715
+    },
+    {
+      "recording": "03.00",
+      "window": "w4",
+      "candidate": "paper_subpixel_b8d3_mse",
+      "baseline": "paper_fullres_b8d3_mse",
+      "p50_ratio": 0.678521986462198
+    }
+  ],
+  "speed_gate": {
+    "passed": true,
+    "threshold_ratio": 0.75,
+    "required_conditions": 8,
+    "passing_conditions": 9
+  }
+}

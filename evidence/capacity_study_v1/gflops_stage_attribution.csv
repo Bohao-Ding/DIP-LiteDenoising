@@ -1,0 +1,27 @@
+display_name,model,stage_group,stage_label,stage_order,gflops_mean
+122K anchor,bf8_d3_standard_full_reference,Encoder,Encoder 1,1,0.467131264
+122K anchor,bf8_d3_standard_full_reference,Encoder,Encoder 2,2,0.442545408
+122K anchor,bf8_d3_standard_full_reference,Encoder,Encoder 3,3,0.441409536
+122K anchor,bf8_d3_standard_full_reference,Bottleneck,Bottleneck,4,0.441409536
+122K anchor,bf8_d3_standard_full_reference,Decoder,Decoder 1,5,1.177092096
+122K anchor,bf8_d3_standard_full_reference,Decoder,Decoder 2,6,1.180121088
+122K anchor,bf8_d3_standard_full_reference,Decoder,Decoder 3,7,1.180121088
+122K anchor,bf8_d3_standard_full_reference,Output,Output,8,0.004097642667
+491K deep,bf8_d4_standard,Encoder,Encoder 1,1,0.467131264
+491K deep,bf8_d4_standard,Encoder,Encoder 2,2,0.442545408
+491K deep,bf8_d4_standard,Encoder,Encoder 3,3,0.441409536
+491K deep,bf8_d4_standard,Encoder,Encoder 4,4,0.441409536
+491K deep,bf8_d4_standard,Bottleneck,Bottleneck,5,0.439123968
+491K deep,bf8_d4_standard,Decoder,Decoder 1,6,1.177092096
+491K deep,bf8_d4_standard,Decoder,Decoder 2,7,1.177092096
+491K deep,bf8_d4_standard,Decoder,Decoder 3,8,1.180121088
+491K deep,bf8_d4_standard,Decoder,Decoder 4,9,1.180121088
+491K deep,bf8_d4_standard,Output,Output,10,0.004097642667
+488K wide,bf16_d3_standard,Encoder,Encoder 1,1,1.524323072
+488K wide,bf16_d3_standard,Encoder,Encoder 2,2,1.770181632
+488K wide,bf16_d3_standard,Encoder,Encoder 3,3,1.765638144
+488K wide,bf16_d3_standard,Bottleneck,Bottleneck,4,1.765638144
+488K wide,bf16_d3_standard,Decoder,Decoder 1,5,4.708368384
+488K wide,bf16_d3_standard,Decoder,Decoder 2,6,4.720484352
+488K wide,bf16_d3_standard,Decoder,Decoder 3,7,4.720484352
+488K wide,bf16_d3_standard,Output,Output,8,0.008195285333

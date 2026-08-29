@@ -1,0 +1,4 @@
+# Public evidence hashes are byte-level and must be stable across checkouts.
+/evidence/capacity_study_v1/** -text
+/evidence/paper_evidence_v1/** -text
+/evidence/distribution_manifest.json -text

@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "verified_utc": "2026-08-06T00:00:00+00:00",
+  "script": "scripts/prepare_figure_data.py",
+  "locked_metric_count": 540,
+  "trained_run_count": 405,
+  "baseline_record_count": 135,
+  "scope": "author-generated numerical manuscript data; third-party image pixels are excluded",
+  "third_party_data_note": "Neurofinder TIFF files, complete frames, predictions and equivalent pixel arrays are not redistributed.",
+  "output_files": [
+    "run_metrics.csv",
+    "model_summary.csv",
+    "cell_summary.csv",
+    "paired_compact_high.csv",
+    "compact_temporal_mean.csv",
+    "capacity_sensitivity.csv",
+    "paired_run_differences.csv",
+    "paired_run_summary.csv",
+    "gflops_stage_attribution.csv",
+    "anomaly_loss_history.csv",
+    "anomaly_diagnostics.csv",
+    "qualitative_selection_metadata.json"
+  ]
+}

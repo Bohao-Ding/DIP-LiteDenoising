@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-08-06",
+  "contains_pixel_data": false,
+  "redistribution_note": "The source recordings have no explicit dataset licence identified by the authors. This file records provenance only and does not redistribute targets, predictions, residuals or equivalent pixel arrays.",
+  "source_repository": "https://github.com/codeneuro/neurofinder",
+  "selections": [
+    {
+      "recording": "01.00",
+      "centre_frame_index": 2080,
+      "archive_url": "https://s3.amazonaws.com/neuro.datasets/challenges/neurofinder/neurofinder.01.00.zip",
+      "archive_sha256": "0b2712f54bd027138026fdda34cf96ca4c9016b907b6c112175e47be1a85657b"
+    },
+    {
+      "recording": "01.01",
+      "centre_frame_index": 1687,
+      "archive_url": "https://s3.amazonaws.com/neuro.datasets/challenges/neurofinder/neurofinder.01.01.zip",
+      "archive_sha256": "0bfa01a8c72b9143df2b20455cac128befc8bc1e078cd040e9834b588a475fa6"
+    },
+    {
+      "recording": "03.00",
+      "centre_frame_index": 2080,
+      "archive_url": "https://s3.amazonaws.com/neuro.datasets/challenges/neurofinder/neurofinder.03.00.zip",
+      "archive_sha256": "7168c4798bf6945878905dd626d958655a018f13c93170aa55357e36ecb72a9a"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+comparison,model_a,model_b,recording,window,seed,psnr_db_a,psnr_db_b,delta_psnr_db
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w1,0,15.42670499,15.39132578,0.03537920746
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w1,1,15.40842154,15.41215667,-0.003735124802
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w1,2,15.4404633,15.40635783,0.03410547324
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w1,3,15.41573032,15.42050264,-0.004772317295
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w1,4,15.40562028,15.38746501,0.01815526477
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w2,0,15.43428206,15.4221432,0.01213885771
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w2,1,15.43124042,15.40747205,0.02376836566
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w2,2,15.42280543,15.4365206,-0.0137151681
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w2,3,15.44267295,15.4157314,0.02694154679
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w2,4,15.40690363,15.41236539,-0.005461758131
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w4,0,15.43446021,15.42521222,0.009247985927
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w4,1,15.44125881,15.43208342,0.009175393009
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w4,2,15.43550204,15.41682856,0.0186734843
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w4,3,15.42469046,15.42991175,-0.0052212965
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.00,w4,4,15.4323412,15.42748004,0.004861163668
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w1,0,27.91150138,27.92356986,-0.01206848042
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w1,1,27.91674969,27.91761806,-0.0008683700318
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w1,2,27.91116533,27.89729789,0.01386743916
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w1,3,27.93046521,27.90848351,0.02198169437
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w1,4,27.92887363,27.91362768,0.01524595055
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w2,0,27.96207951,27.94598119,0.01609832685
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w2,1,27.95242807,27.94505526,0.007372813395
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w2,2,27.96336931,27.94610857,0.01726074538
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w2,3,27.94806224,27.94762266,0.0004395805216
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w2,4,27.95719461,27.9483057,0.008888905832
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w4,0,27.9750612,27.96424715,0.01081405276
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w4,1,27.97906162,27.97375983,0.00530179369
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w4,2,27.96523543,27.96927462,-0.00403919751
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w4,3,27.9760565,27.97345103,0.002605469258
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,01.01,w4,4,27.97644946,27.96194526,0.01450420542
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w1,0,13.24246242,13.22434664,0.01811577206
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w1,1,13.24777764,13.21314888,0.0346287649
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w1,2,13.24705495,13.22490937,0.02214558072
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w1,3,13.24754922,13.22744955,0.02009966291
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w1,4,13.24885886,13.20590021,0.0429586546
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w2,0,13.25524897,13.22659069,0.02865828167
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w2,1,13.2517428,13.23703637,0.01470643028
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w2,2,13.25056368,13.23697646,0.01358721606
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w2,3,13.24466587,13.22911352,0.01555234958
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w2,4,13.24528585,13.23312903,0.01215681547
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w4,0,13.2557463,13.24117057,0.01457573023
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w4,1,13.25751694,13.23383551,0.02368143593
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w4,2,13.25449666,13.24234518,0.01215148234
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w4,3,13.25049104,13.2440494,0.00644164324
+491K minus 122K anchor,bf8_d4_standard,bf8_d3_standard_full_reference,03.00,w4,4,13.25157783,13.24096513,0.01061270132
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w1,0,15.42670499,15.43761864,-0.01091365267
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w1,1,15.40842154,15.41595252,-0.00753097958
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w1,2,15.4404633,15.422764,0.01769930006
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w1,3,15.41573032,15.39312688,0.02260343624
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w1,4,15.40562028,15.41283544,-0.007215163787
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w2,0,15.43428206,15.42598385,0.00829821613
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w2,1,15.43124042,15.43234584,-0.00110541975
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w2,2,15.42280543,15.41664943,0.006156008963
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w2,3,15.44267295,15.40834917,0.03432377787
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w2,4,15.40690363,15.40466063,0.002243005687
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w4,0,15.43446021,15.44625289,-0.01179268072
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w4,1,15.44125881,15.42452329,0.01673551947
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w4,2,15.43550204,15.43577538,-0.0002733388261
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w4,3,15.42469046,15.45012367,-0.02543321343
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.00,w4,4,15.4323412,15.44075736,-0.008416160338
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w1,0,27.91150138,27.93080106,-0.01929967876
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w1,1,27.91674969,27.92738375,-0.01063406226
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w1,2,27.91116533,27.90566239,0.005502940834
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w1,3,27.93046521,27.90808297,0.02238223307
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w1,4,27.92887363,27.90710223,0.02177140306
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w2,0,27.96207951,27.94900731,0.01307220199
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w2,1,27.95242807,27.95404932,-0.001621250128
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w2,2,27.96336931,27.95629046,0.0070788534
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w2,3,27.94806224,27.9617734,-0.0137111515
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w2,4,27.95719461,27.95293494,0.004259664003
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w4,0,27.9750612,27.97491714,0.000144065899
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w4,1,27.97906162,27.95540918,0.02365244665
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w4,2,27.96523543,27.97558641,-0.01035098012
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w4,3,27.9760565,27.97095707,0.005099434034
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,01.01,w4,4,27.97644946,27.97727763,-0.0008281650612
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w1,0,13.24246242,13.2445643,-0.002101884982
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w1,1,13.24777764,13.2447806,0.002997043379
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w1,2,13.24705495,13.2324262,0.01462874764
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w1,3,13.24754922,13.23493721,0.01261200337
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w1,4,13.24885886,13.23145282,0.01740604053
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w2,0,13.25524897,13.25529045,-4.148043426e-05
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w2,1,13.2517428,13.25394172,-0.002198922469
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w2,2,13.25056368,13.25315567,-0.002591993616
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w2,3,13.24466587,13.26294658,-0.01828070814
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w2,4,13.24528585,13.25725776,-0.01197191148
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w4,0,13.2557463,13.26180115,-0.006054847232
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w4,1,13.25751694,13.25801252,-0.0004955741048
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w4,2,13.25449666,13.24877875,0.005717914774
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w4,3,13.25049104,13.25512957,-0.004638526125
+491K deep minus 488K wide,bf8_d4_standard,bf16_d3_standard,03.00,w4,4,13.25157783,13.25799646,-0.006418629565

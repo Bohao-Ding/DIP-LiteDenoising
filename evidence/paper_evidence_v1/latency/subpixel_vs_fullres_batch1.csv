@@ -1,0 +1,10 @@
+recording,window,candidate,baseline,p50_ratio
+01.00,w1,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.6378441864686568
+01.00,w2,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.6845444341302923
+01.00,w4,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.7447295172265807
+01.01,w1,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.7306323111873213
+01.01,w2,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.6831024891681079
+01.01,w4,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.7478779486350889
+03.00,w1,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.7070683593337671
+03.00,w2,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.6812210569492715
+03.00,w4,paper_subpixel_b8d3_mse,paper_fullres_b8d3_mse,0.678521986462198

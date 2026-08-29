@@ -1,0 +1,3 @@
+comparison,paired_runs,mean_delta_psnr_db,sd_delta_psnr_db,median_delta_psnr_db,q1_delta_psnr_db,q3_delta_psnr_db,positive_seed_pairs,positive_cell_means,negative_cell_means,minimum_delta_psnr_db,maximum_delta_psnr_db
+491K minus 122K anchor,45,0.01260041174,0.01255853872,0.01358721606,0.00530179369,0.0186734843,37,9,0,-0.0137151681,0.0429586546
+491K deep minus 488K wide,45,0.001788086266,0.01284601837,-0.0002733388261,-0.007215163787,0.00829821613,21,6,3,-0.02543321343,0.03432377787

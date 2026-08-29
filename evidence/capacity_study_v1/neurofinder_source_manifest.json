@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "dataset_title": "Neurofinder: Calcium imaging analysis benchmark",
+  "source_repository": "https://github.com/codeneuro/neurofinder",
+  "loader_repository": "https://github.com/codeneuro/datasets",
+  "verified_on": "2026-08-06",
+  "dataset_doi": null,
+  "dataset_licence": null,
+  "rights_note": "No dataset DOI or explicit dataset licence was identified in the downloaded metadata or the two CodeNeuro repositories. Public download access and null values do not imply public-domain status or permission to redistribute the recordings.",
+  "recordings": [
+    {
+      "dataset_id": "01.00",
+      "recording_id": "20141213_L83_007",
+      "archive_url": "https://s3.amazonaws.com/neuro.datasets/challenges/neurofinder/neurofinder.01.00.zip",
+      "archive_size_bytes": 989429416,
+      "archive_sha256": "0b2712f54bd027138026fdda34cf96ca4c9016b907b6c112175e47be1a85657b",
+      "laboratory": "Hausser Lab",
+      "location": "UCL",
+      "distributed_info_json_contributors": [
+        "Adam Packer",
+        "Lloyd Russell"
+      ],
+      "official_repository_contributor_group": [
+        "Adam Packer",
+        "Lloyd Russell",
+        "Michael Häusser"
+      ],
+      "animal": "Mouse",
+      "animal_state": "Awake head-fixed",
+      "experiment": "Drifting grating visual stimuli",
+      "imaging_method": "Two-photon raster",
+      "indicator": "GCaMP6s",
+      "region": "V1",
+      "frame_rate_hz": 7.5,
+      "dimensions": [
+        512,
+        512,
+        2250
+      ]
+    },
+    {
+      "dataset_id": "01.01",
+      "recording_id": "20140727_L46_001",
+      "archive_url": "https://s3.amazonaws.com/neuro.datasets/challenges/neurofinder/neurofinder.01.01.zip",
+      "archive_size_bytes": 726811267,
+      "archive_sha256": "0bfa01a8c72b9143df2b20455cac128befc8bc1e078cd040e9834b588a475fa6",
+      "laboratory": "Hausser Lab",
+      "location": "UCL",
+      "distributed_info_json_contributors": [
+        "Adam Packer",
+        "Lloyd Russell"
+      ],
+      "official_repository_contributor_group": [
+        "Adam Packer",
+        "Lloyd Russell",
+        "Michael Häusser"
+      ],
+      "animal": "Mouse",
+      "animal_state": "Awake head-fixed",
+      "experiment": "Drifting grating visual stimuli",
+      "imaging_method": "Two-photon raster",
+      "indicator": "GCaMP6s",
+      "region": "V1",
+      "frame_rate_hz": 7.5,
+      "dimensions": [
+        512,
+        512,
+        1825
+      ]
+    },
+    {
+      "dataset_id": "03.00",
+      "recording_id": "jd098_2014-11-06-17h43m34s",
+      "archive_url": "https://s3.amazonaws.com/neuro.datasets/challenges/neurofinder/neurofinder.03.00.zip",
+      "archive_size_bytes": 973867258,
+      "archive_sha256": "7168c4798bf6945878905dd626d958655a018f13c93170aa55357e36ecb72a9a",
+      "laboratory": "Losonczy Lab",
+      "location": "Columbia University",
+      "distributed_info_json_contributors": [
+        "Jeff Zaremba"
+      ],
+      "official_repository_contributor_group": [
+        "Jeff Zaremba",
+        "Patrick Kaifosh",
+        "Attila Losonczy"
+      ],
+      "animal": "Mouse",
+      "animal_state": "Awake head-fixed",
+      "experiment": "Hidden reward spatial navigation",
+      "imaging_method": "Two-photon raster",
+      "indicator": "GCaMP6f",
+      "region": "dHPC CA1",
+      "frame_rate_hz": 7.5,
+      "dimensions": [
+        498,
+        490,
+        2250
+      ]
+    }
+  ]
+}
