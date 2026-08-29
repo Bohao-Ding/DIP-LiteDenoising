@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "stage": "objective_controlled_structure_screen",
+  "description": "Seed-0 validation screen comparing structures under a shared MSE training and validation-selection objective; test results are not used.",
+  "reference_variant": "subpixel_psnr_aligned_b8d3",
+  "data": {
+    "recording_roots": {
+      "01.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.00",
+      "01.01": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.01",
+      "03.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.03.00"
+    },
+    "split_pattern": "../DeepInterPolation-improve/paper_training_package/runs/neurofinder/{recording}/{window}/bf8_d3_standard_full_reference/seed0/split.json"
+  },
+  "recordings": ["01.00", "01.01", "03.00"],
+  "windows": ["w2"],
+  "variants": [
+    "subpixel_psnr_aligned_b8d3",
+    "baseline_psnr_aligned_b8d3",
+    "ctpf_psnr_aligned_b8d3",
+    "subpixel_dense_refiner_psnr_aligned_b8d3",
+    "subpixel_naf_lite_psnr_aligned_b8d3"
+  ],
+  "seeds": [0],
+  "training": {
+    "epochs": 25,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "scheduler_step_size": 10,
+    "scheduler_gamma": 0.5,
+    "checkpoint_every": 5,
+    "num_workers": 4,
+    "precision": "amp_fp16",
+    "metric_precision": "fp32",
+    "evaluation_split": "val",
+    "channels_last": true,
+    "device": "cuda"
+  },
+  "benchmark": {"enabled": false},
+  "output_root": "artifacts/objective_controlled_structure_screen"
+}

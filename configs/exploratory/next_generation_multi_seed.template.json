@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "stage": "next_generation_multi_seed_confirmation",
+  "description": "Deferred multi-seed confirmation for the direct parent and one promoted candidate.",
+  "data": {
+    "recording_roots": {
+      "01.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.00",
+      "01.01": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.01",
+      "03.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.03.00"
+    },
+    "split_pattern": "../DeepInterPolation-improve/paper_training_package/runs/neurofinder/{recording}/{window}/bf8_d3_standard_full_reference/seed0/split.json"
+  },
+  "recordings": ["01.00", "01.01", "03.00"],
+  "windows": ["w1", "w2", "w4"],
+  "variants": [
+    "baseline_b8d3",
+    "subpixel_residual_b8d3",
+    "subpixel_naf_lite_b8d3",
+    "ctpf_subpixel_b8d3",
+    "subpixel_dense_refiner_b8d3",
+    "subpixel_projected_decoder_b8d3",
+    "subpixel_psnr_aligned_b8d3"
+  ],
+  "seeds": [0, 1, 2, 3, 4],
+  "training": {
+    "epochs": 75,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "scheduler_step_size": 25,
+    "scheduler_gamma": 0.5,
+    "checkpoint_every": 5,
+    "num_workers": 4,
+    "precision": "amp_fp16",
+    "metric_precision": "fp32",
+    "evaluation_split": "test",
+    "channels_last": true,
+    "device": "cuda"
+  },
+  "benchmark": {"enabled": false},
+  "output_root": "artifacts/next_generation_multi_seed"
+}

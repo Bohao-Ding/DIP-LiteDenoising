@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "target_kind": "self_supervised_center_frame",
+  "total_frames": 2250,
+  "raw_splits": {
+    "train": [
+      0,
+      1574
+    ],
+    "val": [
+      1575,
+      1911
+    ],
+    "test": [
+      1912,
+      2249
+    ]
+  },
+  "purged_splits": {
+    "train": [
+      2,
+      1572
+    ],
+    "val": [
+      1577,
+      1909
+    ],
+    "test": [
+      1914,
+      2247
+    ]
+  },
+  "window": {
+    "pre_frame": 2,
+    "post_frame": 2,
+    "pre_post_omission": 0
+  },
+  "input_offsets": [
+    -2,
+    -1,
+    1,
+    2
+  ],
+  "left_context": 2,
+  "right_context": 2
+}

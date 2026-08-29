@@ -17,6 +17,8 @@ dist/
 /outputs/
 /runs/
 /checkpoints/
+/artifacts/
+/configs/paths.local.json
 
 *.pt
 *.pth

@@ -25,6 +25,9 @@ test = ["pytest>=8.0"]
 [project.urls]
 Repository = "https://github.com/Bohao-Ding/DIP-LiteDenoising"
 
+[project.scripts]
+dip-evidence = "deepinterpolation_improve.experiments.paper_evidence_v1.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 

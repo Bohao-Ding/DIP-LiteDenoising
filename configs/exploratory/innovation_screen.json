@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "stage": "innovation_screen",
+  "description": "Single-seed mechanism screen for partial NAF, constrained temporal/detail modules, grouped shifts and teacher distillation.",
+  "data": {
+    "recording_roots": {
+      "01.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.00",
+      "01.01": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.01",
+      "03.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.03.00"
+    },
+    "split_pattern": "../DeepInterPolation-improve/paper_training_package/runs/neurofinder/{recording}/{window}/bf8_d3_standard_full_reference/seed0/split.json"
+  },
+  "recordings": ["01.00"],
+  "windows": ["w2"],
+  "variants": [
+    "baseline_b8d3",
+    "subpixel_residual_b8d3",
+    "subpixel_naf_lite_b8d3",
+    "subpixel_partial_naf_quarter_b8d3",
+    "subpixel_partial_naf_half_b8d3",
+    "subpixel_symmetric_anchor_b8d3",
+    "subpixel_highpass_gate_b8d3",
+    "subpixel_group_shift_b8d3",
+    "subpixel_distilled_b8d3"
+  ],
+  "seeds": [0],
+  "training": {
+    "epochs": 15,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "scheduler_step_size": 25,
+    "scheduler_gamma": 0.5,
+    "checkpoint_every": 5,
+    "num_workers": 4,
+    "precision": "amp_fp16",
+    "metric_precision": "fp32",
+    "channels_last": true,
+    "device": "cuda",
+    "distillation": {
+      "teacher_variant": "subpixel_naf_lite_b8d3",
+      "teacher_checkpoint": "artifacts/targeted_screen/01.00/w2/subpixel_naf_lite_b8d3/seed0/best.pt",
+      "weight": 0.25
+    }
+  },
+  "benchmark": {
+    "enabled": true,
+    "batch_size": 1,
+    "warmup": 20,
+    "repeats": 100,
+    "precision": "fp16",
+    "channels_last": true
+  },
+  "output_root": "artifacts/innovation_screen"
+}

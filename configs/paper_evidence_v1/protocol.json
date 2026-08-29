@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "protocol_name": "paper_evidence_v1",
+  "matched_evaluation_segments_disclosure": "The evaluation segments were inspected in prior exploratory work and are not claimed as an independent post-selection test set.",
+  "freeze_requires": {
+    "paper_evidence_core": 225,
+    "paper_evidence_mechanism": 27,
+    "training_evaluation_split": "val",
+    "forbidden_before_freeze": ["test_metrics.csv", "evaluation_summary.json"]
+  },
+  "paired_effects": {
+    "structure_mae": ["paper_subpixel_b8d3_mae", "paper_fullres_b8d3_mae"],
+    "structure_mse": ["paper_subpixel_b8d3_mse", "paper_fullres_b8d3_mse"],
+    "objective_fullres": ["paper_fullres_b8d3_mse", "paper_fullres_b8d3_mae"],
+    "objective_subpixel": ["paper_subpixel_b8d3_mse", "paper_subpixel_b8d3_mae"],
+    "capacity_reference": ["paper_fullres_b8d4_mse", "paper_subpixel_b8d3_mse"]
+  },
+  "interaction": "(paper_subpixel_b8d3_mse - paper_fullres_b8d3_mse) - (paper_subpixel_b8d3_mae - paper_fullres_b8d3_mae)",
+  "mechanism_reference": "paper_subpixel_b8d3_mse",
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 20260827,
+    "hierarchy": ["recording", "window", "seed"],
+    "interpretation": "sensitivity interval; not a population significance or equivalence test"
+  },
+  "engineering_thresholds": {
+    "quality_retention_mean_delta_psnr_db_min": -0.01,
+    "quality_retention_min_condition_delta_psnr_db": -0.03,
+    "quality_improvement_mean_delta_psnr_db_min": 0.02,
+    "speed_batch1_p50_ratio_max": 0.75,
+    "speed_conditions_required": 8
+  },
+  "latency": {
+    "device": "RTX 4060 Laptop GPU",
+    "precision": "fp16",
+    "channels_last": true,
+    "warmup": 100,
+    "repeats": 500,
+    "balanced_rounds": 5,
+    "batch1_endpoint": ["latency_ms_p50", "latency_ms_p95", "peak_allocated_memory_mb"],
+    "batch4_endpoint": ["throughput_frames_per_second"]
+  },
+  "claim_scope": "noisy-centre-frame reconstruction fidelity and device-specific inference measurements only"
+}

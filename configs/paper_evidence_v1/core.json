@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "stage": "paper_evidence_core",
+  "description": "Locked five-arm 2 x 2 objective-by-computation study with a B8-D4 quality reference. Training produces validation metrics only.",
+  "reference_variant": "paper_fullres_b8d3_mse",
+  "data": {
+    "recording_roots": {
+      "01.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.00",
+      "01.01": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.01",
+      "03.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.03.00"
+    },
+    "split_pattern": "../DeepInterPolation-improve/paper_training_package/runs/neurofinder/{recording}/{window}/bf8_d3_standard_full_reference/seed0/split.json"
+  },
+  "recordings": ["01.00", "01.01", "03.00"],
+  "windows": ["w1", "w2", "w4"],
+  "variants": [
+    "paper_fullres_b8d3_mae",
+    "paper_fullres_b8d3_mse",
+    "paper_subpixel_b8d3_mae",
+    "paper_subpixel_b8d3_mse",
+    "paper_fullres_b8d4_mse"
+  ],
+  "seeds": [0, 1, 2, 3, 4],
+  "training": {
+    "epochs": 75,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "scheduler_step_size": 25,
+    "scheduler_gamma": 0.5,
+    "checkpoint_every": 5,
+    "num_workers": 4,
+    "precision": "amp_fp16",
+    "metric_precision": "fp32",
+    "evaluation_split": "val",
+    "channels_last": true,
+    "device": "cuda"
+  },
+  "benchmark": {"enabled": false},
+  "output_root": "artifacts/paper_evidence_v1/core"
+}

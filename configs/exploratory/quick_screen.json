@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "stage": "quick_screen",
+  "description": "Single-seed, single-condition early screen. Results are selection evidence only.",
+  "data": {
+    "recording_roots": {
+      "01.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.00",
+      "01.01": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.01.01",
+      "03.00": "../DeepInterPolation-improve/paper_data/processed/neurofinder/neurofinder.03.00"
+    },
+    "split_pattern": "../DeepInterPolation-improve/paper_training_package/runs/neurofinder/{recording}/{window}/bf8_d3_standard_full_reference/seed0/split.json"
+  },
+  "recordings": ["01.00"],
+  "windows": ["w2"],
+  "variants": [
+    "baseline_b8d3",
+    "mean_residual_b8d3",
+    "adaptive_anchor_b8d3",
+    "lowres_heavy_residual",
+    "rep_residual_b8d3",
+    "consensus_attention_b8d3",
+    "naf_bottleneck_residual",
+    "subpixel_residual_b8d3"
+  ],
+  "seeds": [0],
+  "training": {
+    "epochs": 15,
+    "batch_size": 4,
+    "learning_rate": 0.001,
+    "scheduler_step_size": 25,
+    "scheduler_gamma": 0.5,
+    "checkpoint_every": 5,
+    "num_workers": 4,
+    "precision": "amp_fp16",
+    "metric_precision": "fp32",
+    "channels_last": true,
+    "device": "cuda"
+  },
+  "benchmark": {
+    "enabled": true,
+    "batch_size": 1,
+    "warmup": 20,
+    "repeats": 100,
+    "precision": "fp16",
+    "channels_last": true
+  },
+  "output_root": "artifacts/quick_screen"
+}
