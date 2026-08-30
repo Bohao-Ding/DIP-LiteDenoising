@@ -1,6 +1,6 @@
 # Technical report: capacity placement and objective-aligned subpixel inference
 
-Status: repository-facing technical record
+Status: repository-facing technical record; revised after the full-package manuscript review
 Scientific manuscript authority: maintained separately; this report is not submission material
 Frozen extension authority: `evidence/paper_evidence_v1/evaluation_freeze.json` and `evidence/paper_evidence_v1/paper_report.json`
 Language authority: this English report; `technical_report.zh-CN.md` is the synchronized Chinese translation.
@@ -11,9 +11,7 @@ This report preserves the implementation, provenance and negative-result details
 
 The supported endpoint is **noisy-centre-frame reconstruction fidelity within three source recordings, plus model-only inference measurements on one audited device**. The experiments do not establish clean-reference denoising, removal of independent noise, biological-signal preservation, ROI or trace recovery, event detection, unseen-recording generalisation, cross-hardware speed, acquisition throughput or clinical utility.
 
-The project contains 405 training runs in the discovery study and 252 in the frozen extension, for 657 algorithmic runs. These are nested within three Neurofinder acquisition recordings. They are not 657 independent biological replicates.
-
-The submission main text now presents these runs as **one 657-run unified study**. Within that submission-facing organization, the 405-run architecture-and-capacity block and the 252-run controlled-attribution block are design modules of the same study. This technical report nevertheless preserves the real execution order: the 405-run block was completed and inspected before the 252-run block was designed, frozen and evaluated.
+The project contains 405 training runs in the capacity study and 252 in the frozen extension, for 657 algorithmic runs. These are nested within three Neurofinder acquisition recordings and are not 657 independent biological replicates. This report preserves the real 405-to-252 execution order and freeze lineage. The submission main text does not organise its argument around the total run count or execution chronology; it follows the compact model, computation placement, capacity return, training objective and device performance.
 
 ## 2. Authority map and chronology
 
@@ -30,11 +28,11 @@ The submission main text now presents these runs as **one 657-run unified study*
 
 | Element | Submission main-text organization | Technical-report interpretation |
 |---|---|---|
-| Unified study | One 657-run study | One scientific narrative composed of two design modules; not 657 independent biological replicates |
-| Architecture-and-capacity block | 405-run design module | Executed first; includes architecture screening, capacity placement, anomaly audit and model-selection evidence |
-| Controlled-attribution block | 252-run design module (225 core + 27 mechanism) | Executed after the first block; preserves the frozen objective-by-computation attribution and mechanism controls |
+| Design factors | Width, depth, block family, inference precision, computation placement and objective | The engineering chronology still separates the 405-run capacity study from the later 252-run frozen extension |
+| Architecture-and-capacity evidence | Explains compact B8-D3 selection and computation placement | Executed first; includes architecture screening, capacity placement, anomaly audit and model-selection evidence |
+| Controlled-attribution evidence | Explains the G4 computation placement and MSE choice | Executed later; preserves 225 core runs and 27 mechanism controls with frozen provenance |
 
-This crosswalk changes document organization, not provenance. The submission may use a unified-study narrative, whereas this report retains the chronological 405-to-252 evidence lineage and does not retroactively portray the second block as having been fixed before the first block was inspected.
+This crosswalk changes document organisation, not provenance. The submission follows the scientific questions needed to understand the compact model, whereas this report retains the chronological 405-to-252 evidence lineage and does not retroactively portray the second block as having been fixed before the first block was inspected.
 
 The discovery study preceded the subpixel extension. Its most useful result was a structural diagnostic rather than an architecture ranking: B8-D4 and B16-D3 had similar parameter counts (491,257 and 487,537) but required 6.950 and 20.983 convolutional GFLOPs. This showed that parameter count did not specify computation placement. The subpixel residual design was then tested in an isolated namespace.
 
@@ -96,13 +94,19 @@ All extension arms use a temporal-mean anchor and a zero-initialised residual ou
 | G4 | 2x subpixel | B8-D3 | MSE | principal subpixel arm |
 | G5 | full resolution | B8-D4 | MSE | cross-design reference |
 
-For input `X`, the subpixel output is the temporal mean plus an inverse-rearranged residual:
+For $X\in\mathbb{R}^{C\times H\times W}$, omitting the batch dimension, factor-two PixelUnshuffle maps
 
-```text
-prediction = temporal_mean(X) + PixelShuffle(residual_net(PixelUnshuffle(X)))
-```
+$$
+[P_2(X)]_{4c+2a+b,i,j}=X_{c,2i+a,2j+b},\qquad a,b\in\{0,1\}.
+$$
 
-Odd spatial dimensions are padded before rearrangement and cropped after reconstruction. PixelUnshuffle is invertible and does not discard input samples. Its use is not novel: related low-resolution restoration principles appear in FFDNet and MWCNN. The contribution is the controlled combination with centre exclusion, the temporal-mean anchor, zero-initialised residual, 2x2 attribution and repeated device audit.
+Hence $P_2(X)\in\mathbb{R}^{4C\times H/2\times W/2}$, and $P_2^{-1}$ restores each phase to its original spatial location. The B8-D3 residual network uses encoder widths 8, 16 and 32, a 64-channel bottleneck, two $3\times3$ convolution--ReLU operations per level, max pooling, nearest-neighbour upsampling and skip concatenation. Its final $1\times1$ convolution produces four phase-residual channels. The prediction is
+
+$$
+\widehat Y=A(X)+P_2^{-1}[R_\theta(P_2(X))],\qquad A(X)=C^{-1}\sum_c X_c.
+$$
+
+The final convolution weights and bias are initialised to zero, so the initial prediction equals the temporal-mean anchor. Odd dimensions are padded before rearrangement and cropped after reconstruction. PixelUnshuffle is invertible and does not discard input samples. Its use is not novel: related low-resolution restoration principles appear in FFDNet and MWCNN. The contribution is the controlled combination with centre exclusion, the full-resolution temporal-mean anchor, zero-initialised residual learning, compact capacity, matched attribution and repeated device audit.
 
 ## 5. Training and frozen evaluation
 
@@ -169,6 +173,8 @@ The earlier RTX 5070 Ti block-screening record used batch size 4, zero warm-up a
 
 The integrated repository exposes the experiment under `deepinterpolation_improve.experiments.paper_evidence_v1`. The public API retains the model registry and frozen-report functions, while the `dip-evidence` command provides inspection, dry-run planning and explicitly authorized execution.
 
+Commit 83566c93cd1f29c276d39eb88e2ff6bdafd72e6e is the integrated manuscript snapshot referenced by the paper. This technical report may be updated in later documentation commits; such commits are not releases, tags or DOI-bearing versions unless explicitly recorded as such.
+
 Recommended sequence:
 
 ```powershell
@@ -226,7 +232,7 @@ Tests ran in system temporary directories with pytest cache generation disabled.
 
 | English section | Chinese mirror | Canonical anchor |
 |---|---|---|
-| 1--3: scope, chronology, data | 1--3 | one 657-run unified study = 405 architecture-and-capacity + 252 controlled attribution; real execution order retained here |
+| 1--3: scope, chronology, data | 1--3 | the manuscript is organised by design factors; the real 405-to-252 execution order is retained here |
 | 4--5: models, training, freeze | 4--5 | protocol SHA-256 `82efd3d6...`; freeze `a723648a...` |
 | 6: complete results | 6 | G4-G2 −0.003552 dB; G2→G4 latency ratio 0.6378--0.7479 |
 | 7--8: anomalies and devices | 7--8 | two disclosed chain anomalies; formal RTX 4060 versus exploratory RTX 5070 Ti |
