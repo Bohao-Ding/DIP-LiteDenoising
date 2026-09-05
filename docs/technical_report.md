@@ -114,6 +114,10 @@ The discovery and extension runs use Adam, learning rate `1e-3`, StepLR every 25
 
 The core extension has 225 runs: three recordings x three windows x five seeds x five arms. Three seed-0 mechanisms across nine conditions add 27 runs. The evaluation freeze records hashes for protocol and stage configurations, split and run manifests, training summaries, loss histories, final checkpoints and best checkpoints. A missing or changed file invalidates the freeze.
 
+### 5.1 AI-assisted implementation and verification record
+
+OpenAI Codex (OpenAI; Codex desktop environment, accessed July--August 2026) assisted source organisation, implementation of the model-variant registry and associated tests, documentation, and cross-file checks. The authors defined the research question, model specifications, training protocol, evaluation rules and interpretation. They inspected all generated or edited code and verified it against frozen numerical artifacts and interface-contract tests. AI tools did not generate training data, change frozen outputs or select reported results.
+
 PSNR uses the observed target's per-frame maximum-minus-minimum range. `gSSIM` is a whole-frame luminance-contrast-covariance statistic and is not standard local-window SSIM. A 10,000-replicate hierarchy resamples recordings, then windows and seeds. Its bounds are sensitivity intervals, not population confidence intervals or equivalence tests.
 
 The protocol-defined engineering rules are:
@@ -233,7 +237,7 @@ Tests ran in system temporary directories with pytest cache generation disabled.
 | English section | Chinese mirror | Canonical anchor |
 |---|---|---|
 | 1--3: scope, chronology, data | 1--3 | the manuscript is organised by design factors; the real 405-to-252 execution order is retained here |
-| 4--5: models, training, freeze | 4--5 | protocol SHA-256 `82efd3d6...`; freeze `a723648a...` |
+| 4--5: models, training, freeze and AI-assisted verification | 4--5 | protocol SHA-256 `82efd3d6...`; freeze `a723648a...`; AI use is bounded in Section 5.1 |
 | 6: complete results | 6 | G4-G2 −0.003552 dB; G2→G4 latency ratio 0.6378--0.7479 |
 | 7--8: anomalies and devices | 7--8 | two disclosed chain anomalies; formal RTX 4060 versus exploratory RTX 5070 Ti |
 | 9--10: runbook and dictionary | 9--10 | `dip-evidence`; 51 payload files / 13,365,803 bytes |
