@@ -433,3 +433,7 @@ datasets. See [NOTICE.md](NOTICE.md) and
 boundaries.
 
 No Zenodo archive or repository DOI has been created.
+
+## Local research and release responsibilities
+
+This checkout remains the independent public release repository. The complete local research workspace uses its own Git history and the consolidated research package as its development source. Do not install both checkouts into the same Python environment. This maintenance preserved the 51-file evidence manifest and did not publish new scientific results or push commits. See [maintenance context](MEMORY.md).

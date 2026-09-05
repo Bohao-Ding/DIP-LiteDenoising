@@ -392,3 +392,7 @@ Allen Institute 的原始项目位于
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 当前未创建 Zenodo 归档或仓库 DOI。
+
+## 本地研究与发布职责
+
+本目录保留独立公开仓库历史。完整本地研究工作区由单独的 Git 仓库管理，并使用归并后的研究项目作为开发入口；不要将两个同名包安装到同一 Python 环境。本次保留 51 项公开证据的清单字节，未新增科学结果、未推送。维护上下文见 [MEMORY.md](MEMORY.md)。
