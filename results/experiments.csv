@@ -121,5 +121,5 @@ shared_width_sweep__slimmable_0.5,shared_width_sweep,slimmable_0.5,slimmable_0.5
 shared_width_sweep__slimmable_0.25,shared_width_sweep,slimmable_0.25,slimmable_0.25,Select channel fraction 0.25 from one trained model,Measure shared-weight width operating points
 relocation_cost__g4,relocation_cost,g4,g4,2x rearrangement,Measure whether the additional convolution reduction lowers forward time
 relocation_cost__subpixel4,relocation_cost,subpixel4,subpixel4,4x rearrangement,Measure whether the additional convolution reduction lowers forward time
-residual_diagnostics__directionality,residual_diagnostics,directionality,directionality,Fixed G4 reconstruction residual,Measure scan-line directional correlations
-residual_diagnostics__row_decomposition,residual_diagnostics,row_decomposition,row_decomposition,Fixed G4 reconstruction residual,Measure neighbour transfer and target-row residual association
+residual_diagnostics__directionality,residual_diagnostics,directionality,directionality,Fixed G4 reconstruction residual,Measure scan-line lag-1 autocovariances
+residual_diagnostics__row_decomposition,residual_diagnostics,row_decomposition,row_decomposition,Fixed G4 reconstruction residual,Measure row-profile energies and association with neighbouring and target rows

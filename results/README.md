@@ -2,7 +2,7 @@
 
 G4 combines a full-resolution temporal-mean anchor, a compact phase-domain residual U-Net and a zero-initialized output head. The primary contribution is retention of measured reconstruction PSNR with far less computation than the original DeepInterpolation architecture.
 
-This page shares 124 experiment entries and 16,617 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
+This page shares 124 experiment entries and 16,645 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
 
 - [Experiment names, changes and purposes](experiments.csv)
 - [Complete final scalar results](results.csv)
@@ -242,22 +242,22 @@ Additional-recording validation trains on 02.00/04.00; it is not zero-shot trans
 
 | Experiment | What changed | Why measured | Final endpoints |
 |---|---|---|---|
-| g4_w2 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; recording utility): 01.00/w2=4.199; 01.01/w2=7.929; 03.00/w2=10.08 |
-| g2_w2 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; recording utility): 01.00/w2=4.575; 01.01/w2=6.931; 03.00/w2=10.15 |
-| original_di_w30 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; recording utility): 01.00/w30=4.406; 01.01/w30=18.33; 03.00/w30=74.59 |
-| temporal_mean_w2 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; recording utility): 01.00/w2=5.266; 01.01/w2=5.054; 03.00/w2=6.234 |
-| temporal_mean_w30 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; recording utility): 01.00/w2=514.6; 01.01/w2=347.3; 03.00/w2=761.2 |
+| g4_w2 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; val): 01.00/w2=4.199; 01.01/w2=7.929; 03.00/w2=10.08 |
+| g2_w2 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; val): 01.00/w2=4.575; 01.01/w2=6.931; 03.00/w2=10.15 |
+| original_di_w30 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; val): 01.00/w30=4.406; 01.01/w30=18.33; 03.00/w30=74.59 |
+| temporal_mean_w2 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; val): 01.00/w2=5.266; 01.01/w2=5.054; 03.00/w2=6.234 |
+| temporal_mean_w30 | Official ROI trace projection | Measure trace variability and dynamic range | trace_noise_floor_reduction_median (dimensionless; val): 01.00/w2=514.6; 01.01/w2=347.3; 03.00/w2=761.2 |
 
 ## Estimated noise-floor measurements
 
 | Experiment | What changed | Why measured | Final endpoints |
 |---|---|---|---|
-| g4_w2 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; recording utility): 01.00/w2=167.1; 01.01/w2=169.9; 03.00/w2=163.9 |
-| g2_w2 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; recording utility): 01.00/w2=169.6; 01.01/w2=141.9; 03.00/w2=134.9 |
-| original_di_w30 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; recording utility): 01.00/w30=188.4; 01.01/w30=409.6; 03.00/w30=214.1 |
-| g4_w30 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; recording utility): 01.00/w2=224.6; 01.01/w2=479.8; 03.00/w2=280.3 |
-| temporal_mean_w2 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; recording utility): 01.00/w2=6.378; 01.01/w2=6.345; 03.00/w2=6.352 |
-| temporal_mean_w30 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; recording utility): 01.00/w2=1001; 01.01/w2=915.3; 03.00/w2=959.3 |
+| g4_w2 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; val): 01.00/w2=167.1; 01.01/w2=169.9; 03.00/w2=163.9 |
+| g2_w2 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; val): 01.00/w2=169.6; 01.01/w2=141.9; 03.00/w2=134.9 |
+| original_di_w30 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; val): 01.00/w30=188.4; 01.01/w30=409.6; 03.00/w30=214.1 |
+| g4_w30 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; val): 01.00/w2=224.6; 01.01/w2=479.8; 03.00/w2=280.3 |
+| temporal_mean_w2 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; val): 01.00/w2=6.378; 01.01/w2=6.345; 03.00/w2=6.352 |
+| temporal_mean_w30 | Temporal-variogram noise-floor estimate | Compare estimated input and output variability | floor_reduction_ratio (dimensionless; val): 01.00/w2=1001; 01.01/w2=915.3; 03.00/w2=959.3 |
 
 ## Suite2p utility
 
@@ -299,9 +299,9 @@ Additional-recording validation trains on 02.00/04.00; it is not zero-shot trans
 
 | Experiment | What changed | Why measured | Final endpoints |
 |---|---|---|---|
-| slimmable_1.0 | Select channel fraction 1.0 from one trained model | Measure shared-weight width operating points | mean_psnr_db (dB; evaluation (previously inspected)): 01.00/w2=15.84; 01.01/w2=28.64; 03.00/w2=13.29 |
-| slimmable_0.5 | Select channel fraction 0.5 from one trained model | Measure shared-weight width operating points | mean_psnr_db (dB; evaluation (previously inspected)): 01.00/w2=15.72; 01.01/w2=28.55; 03.00/w2=13.11 |
-| slimmable_0.25 | Select channel fraction 0.25 from one trained model | Measure shared-weight width operating points | mean_psnr_db (dB; evaluation (previously inspected)): 01.00/w2=15.65; 01.01/w2=28.44; 03.00/w2=12.98 |
+| slimmable_1.0 | Select channel fraction 1.0 from one trained model | Measure shared-weight width operating points | mean_psnr_db (dB; val): 01.00/w2=15.84; 01.01/w2=28.64; 03.00/w2=13.29 |
+| slimmable_0.5 | Select channel fraction 0.5 from one trained model | Measure shared-weight width operating points | mean_psnr_db (dB; val): 01.00/w2=15.72; 01.01/w2=28.55; 03.00/w2=13.11 |
+| slimmable_0.25 | Select channel fraction 0.25 from one trained model | Measure shared-weight width operating points | mean_psnr_db (dB; val): 01.00/w2=15.65; 01.01/w2=28.44; 03.00/w2=12.98 |
 
 ## Relocation cost
 
@@ -314,8 +314,8 @@ Additional-recording validation trains on 02.00/04.00; it is not zero-shot trans
 
 | Experiment | What changed | Why measured | Final endpoints |
 |---|---|---|---|
-| directionality | Fixed G4 reconstruction residual | Measure scan-line directional correlations | 01.00 ratio=102.1; 01.01 ratio=42.38; 03.00 ratio=25.59 |
-| row_decomposition | Fixed G4 reconstruction residual | Measure neighbour transfer and target-row residual association | 01.00 transfer_r2=0.001053; 01.00 transfer_r2=0.005637; 01.01 transfer_r2=0.0001373; 01.01 transfer_r2=0.0003769; 03.00 transfer_r2=0.0009376; 03.00 transfer_r2=0.0001525 |
+| directionality | Fixed G4 reconstruction residual | Measure scan-line lag-1 autocovariances | 01.00 ratio=102.1; 01.01 ratio=42.38; 03.00 ratio=25.59 |
+| row_decomposition | Fixed G4 reconstruction residual | Measure row-profile energies and association with neighbouring and target rows | 01.00 transfer_r2=0.001053; 01.00 transfer_r2=0.005637; 01.01 transfer_r2=0.0001373; 01.01 transfer_r2=0.0003769; 03.00 transfer_r2=0.0009376; 03.00 transfer_r2=0.0001525 |
 
 ## Architecture schematic and tools
 
