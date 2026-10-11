@@ -123,4 +123,3 @@ relocation_cost__g4,relocation_cost,g4,g4,2x rearrangement,Measure whether the a
 relocation_cost__subpixel4,relocation_cost,subpixel4,subpixel4,4x rearrangement,Measure whether the additional convolution reduction lowers forward time
 residual_diagnostics__directionality,residual_diagnostics,directionality,directionality,Fixed G4 reconstruction residual,Measure scan-line directional correlations
 residual_diagnostics__row_decomposition,residual_diagnostics,row_decomposition,row_decomposition,Fixed G4 reconstruction residual,Measure neighbour transfer and target-row residual association
-residual_diagnostics__noise_transfer,residual_diagnostics,noise_transfer,noise_transfer,Fixed G4 reconstruction residual,Measure regression onto frame-difference noise proxies

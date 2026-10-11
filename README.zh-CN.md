@@ -2,6 +2,18 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
+## 最终实验结果
+
+**[查看全部已完成实验](results/README.md)** · [实验目录](results/experiments.csv) · [完整最终指标](results/results.csv) · [框架对比图](results/figure/architecture_comparison.png)
+
+主要成果是**时间均值锚定的紧凑子像素残差重建模型**。匹配 w30（60 帧上下文）时，G4 为 **139,204** 参数，原版架构 DI 为 **15,704,769** 参数：参数减少 **112.8 倍**，卷积算术减少 **80.4–83.9 倍**，RTX 5070 Ti 上批量 1 独立前向提速 **3.7–4.2 倍**。三记录 seed 0 的验证重建 PSNR 与 MSE-DI 的差均小于 **0.009 dB**。
+
+公开结果包含 **124 个实验条目和 16,617 个标量指标**，覆盖容量、G1–G5 归因、原版 DI 的 MAE/MSE、结构与窗口、下采样加宽、仿真、标准局部 SSIM、效率、ROI/Suite2p、因果输入和新增记录验证。已有完整单种子结果与多种子汇总分别标识；各实验说明改动、测试目的和最终数值。贡献与测量定义见[解释报告](docs/technical_report.zh-CN.md)。模型前向和完整流程时间分列。
+
+![原版 DI 与 G4 的信息流](results/figure/architecture_comparison.png)
+
+此图为解释性框架图，由 OpenAI imagegen 于 2026-10-12 生成并修正；接口没有暴露图像模型版本。图中文字、通道、尺寸及信息路径已对照实现核查，实验数值来自保存的测量结果。
+
 DIP-LiteDenoising 是一个紧凑的 PyTorch 项目，用于实现和研究
 DeepInterpolation 式自监督时间预测中的 U-Net 模型族。模型从目标中心帧两侧的邻近帧
 预测该中心帧，输入中明确排除中心帧。本仓库适用于科学图像序列的架构检查、模型开发、

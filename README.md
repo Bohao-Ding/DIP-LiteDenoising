@@ -2,6 +2,18 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
+## Final experimental results
+
+**[Browse every completed experiment](results/README.md)** · [Experiment catalog](results/experiments.csv) · [Full final metrics](results/results.csv) · [Architecture comparison](results/figure/architecture_comparison.png)
+
+The principal result is **temporal-mean-anchored compact sub-pixel residual reconstruction**. At matched w30 (60 context frames), G4 has **139,204 parameters** versus **15,704,769** for original-architecture DI: **112.8x fewer parameters**, **80.4–83.9x lower convolution arithmetic**, and **3.7–4.2x faster isolated batch-1 forward execution** on RTX 5070 Ti. Seed-0 validation reconstruction PSNR differs from MSE-DI by less than **0.009 dB** on each of three recordings.
+
+The result collection contains **124 experiment entries and 16,617 scalar endpoints**: capacity, G1–G5 attribution, original DI MAE/MSE, structural/window and widening controls, simulation, standard local SSIM, efficiency, ROI/Suite2p, causal inputs and additional-recording validation. Completed individual seeds and their descriptive summaries are distinguished. See the [technical explanation](docs/technical_report.md) for the contribution and measurement definitions. Model-forward and whole-process timings are reported separately.
+
+![Original DI and compact G4 information flow](results/figure/architecture_comparison.png)
+
+This explanatory schematic was generated and revised with OpenAI imagegen on 12 October 2026; the tool interface did not expose its model version. The information flow and dimensions were checked against the implementation. Numeric plots and results use saved measurements.
+
 DIP-LiteDenoising is a compact PyTorch implementation of the
 U-Net model family studied for DeepInterpolation-style self-supervised temporal
 prediction. It predicts an observed centre frame from neighbouring frames while

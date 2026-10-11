@@ -2,7 +2,7 @@
 
 G4 combines a full-resolution temporal-mean anchor, a compact phase-domain residual U-Net and a zero-initialized output head. The primary contribution is retention of measured reconstruction PSNR with far less computation than the original DeepInterpolation architecture.
 
-This page shares 125 experiment entries and 16,671 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
+This page shares 124 experiment entries and 16,617 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
 
 - [Experiment names, changes and purposes](experiments.csv)
 - [Complete final scalar results](results.csv)
@@ -316,7 +316,6 @@ Additional-recording validation trains on 02.00/04.00; it is not zero-shot trans
 |---|---|---|---|
 | directionality | Fixed G4 reconstruction residual | Measure scan-line directional correlations | 01.00 ratio=102.1; 01.01 ratio=42.38; 03.00 ratio=25.59 |
 | row_decomposition | Fixed G4 reconstruction residual | Measure neighbour transfer and target-row residual association | 01.00 transfer_r2=0.001053; 01.00 transfer_r2=0.005637; 01.01 transfer_r2=0.0001373; 01.01 transfer_r2=0.0003769; 03.00 transfer_r2=0.0009376; 03.00 transfer_r2=0.0001525 |
-| noise_transfer | Fixed G4 reconstruction residual | Measure regression onto frame-difference noise proxies | 01.00 u_coefficient=-9.048e-05; 01.00 u_coefficient=-0.0001148; 01.01 u_coefficient=-0.0001015; 01.01 u_coefficient=-9.53e-05; 03.00 u_coefficient=-0.0001049; 03.00 u_coefficient=-1.409e-05 |
 
 ## Architecture schematic and tools
 
