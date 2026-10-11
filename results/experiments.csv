@@ -1,0 +1,126 @@
+experiment_id,category,name,model_or_variant,change,purpose
+capacity__bf16_d3_standard,capacity,bf16_d3_standard,bf16_d3_standard,"Base width 16, depth 3, standard blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf4_d2_standard,capacity,bf4_d2_standard,bf4_d2_standard,"Base width 4, depth 2, standard blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf4_d3_standard,capacity,bf4_d3_standard,bf4_d3_standard,"Base width 4, depth 3, standard blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf8_d2_standard,capacity,bf8_d2_standard,bf8_d2_standard,"Base width 8, depth 2, standard blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf8_d3_depthwise,capacity,bf8_d3_depthwise,bf8_d3_depthwise,"Base width 8, depth 3, depthwise blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf8_d3_ghost,capacity,bf8_d3_ghost,bf8_d3_ghost,"Base width 8, depth 3, ghost blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf8_d3_inverted_residual,capacity,bf8_d3_inverted_residual,bf8_d3_inverted_residual,"Base width 8, depth 3, inverted residual blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf8_d3_standard_full_reference,capacity,bf8_d3_standard_full_reference,bf8_d3_standard_full_reference,"Base width 8, depth 3, standard blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__bf8_d4_standard,capacity,bf8_d4_standard,bf8_d4_standard,"Base width 8, depth 4, standard blocks","Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__previous_frame_or_nearest_window,capacity,previous_frame_or_nearest_window,previous_frame_or_nearest_window,Deterministic previous frame or nearest window prediction,"Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__temporal_mean,capacity,temporal_mean,temporal_mean,Deterministic temporal mean prediction,"Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+capacity__temporal_median,capacity,temporal_median,temporal_median,Deterministic temporal median prediction,"Measure width, depth and block quality-cost trade-offs on matched evaluation frames"
+causal_w2__subpixel_psnr_aligned_b8d3,causal_w2,Past-only G4,subpixel_psnr_aligned_b8d3,Use only offsets -2 and -1; two input frames,Measure reconstruction with no future-frame waiting
+context_on_demand_screen__context_diff_init_w4_psnr_aligned_b8d3,context_on_demand_screen,context_diff_init_w4_psnr_aligned_b8d3,context_diff_init_w4_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3 at w4; initialisation change only,outer-difference initialisation
+deepcad_rt_baseline__deepcad_rt_unet3d,deepcad_rt_baseline,Adapted DeepCAD-RT architecture,deepcad_rt_unet3d,Conv3d U-Net 16/32/64/128; spatial-only pooling; temporal-mean output head,Compare a 3D architecture under the local centre-excluded MSE protocol
+fundamental_confirmation__subpixel_psnr_aligned_b8d3,fundamental_confirmation,subpixel_psnr_aligned_b8d3,subpixel_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3,PSNR without inference overhead
+fundamental_screen__subpixel_frame_log_mse_b8d3,fundamental_screen,subpixel_frame_log_mse_b8d3,subpixel_frame_log_mse_b8d3,same inference graph as subpixel_residual_b8d3; objective and selection change only,endpoint-aligned frame aggregation
+fundamental_screen__subpixel_odd_shift_psnr_aligned_b8d3,fundamental_screen,subpixel_odd_shift_psnr_aligned_b8d3,subpixel_odd_shift_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3; training-time augmentation only,phase-symmetrised training data
+fundamental_screen__subpixel_psnr_aligned_b8d3,fundamental_screen,subpixel_psnr_aligned_b8d3,subpixel_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3,PSNR without inference overhead
+fundamental_screen__subpixel_psnr_selection_b8d3,fundamental_screen,subpixel_psnr_selection_b8d3,subpixel_psnr_selection_b8d3,same inference graph as subpixel_residual_b8d3; selection change only,endpoint-aligned checkpoint selection
+g4w30_confirmation__subpixel_psnr_aligned_b8d3,g4w30_confirmation,subpixel_psnr_aligned_b8d3,subpixel_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3,PSNR without inference overhead
+innovation_screen__baseline_b8d3,innovation_screen,baseline_b8d3,baseline_b8d3,standard full-resolution U-Net,reference
+innovation_screen__subpixel_distilled_b8d3,innovation_screen,subpixel_distilled_b8d3,subpixel_distilled_b8d3,same inference graph as subpixel_residual_b8d3,PSNR with unchanged inference graph
+innovation_screen__subpixel_group_shift_b8d3,innovation_screen,subpixel_group_shift_b8d3,subpixel_group_shift_b8d3,2 x pixel unshuffle with grouped low-resolution spatiotemporal shift,PSNR at retained convolution cost
+innovation_screen__subpixel_highpass_gate_b8d3,innovation_screen,subpixel_highpass_gate_b8d3,subpixel_highpass_gate_b8d3,2 x pixel unshuffle plus gated zero-mean high-pass correction,MAE and PSNR
+innovation_screen__subpixel_naf_lite_b8d3,innovation_screen,subpixel_naf_lite_b8d3,subpixel_naf_lite_b8d3,2 x pixel unshuffle with one deepest-scale NAF block,PSNR at retained runtime
+innovation_screen__subpixel_partial_naf_half_b8d3,innovation_screen,subpixel_partial_naf_half_b8d3,subpixel_partial_naf_half_b8d3,2 x pixel unshuffle with half-channel deepest-scale NAF,PSNR at reduced NAF latency
+innovation_screen__subpixel_partial_naf_quarter_b8d3,innovation_screen,subpixel_partial_naf_quarter_b8d3,subpixel_partial_naf_quarter_b8d3,2 x pixel unshuffle with quarter-channel deepest-scale NAF,PSNR at reduced NAF latency
+innovation_screen__subpixel_residual_b8d3,innovation_screen,subpixel_residual_b8d3,subpixel_residual_b8d3,"2 x pixel unshuffle, residual U-Net, pixel shuffle",runtime
+innovation_screen__subpixel_symmetric_anchor_b8d3,innovation_screen,subpixel_symmetric_anchor_b8d3,subpixel_symmetric_anchor_b8d3,2 x pixel unshuffle with distance-symmetric temporal anchor,PSNR with constrained temporal weighting
+next_generation_screen__baseline_b8d3,next_generation_screen,baseline_b8d3,baseline_b8d3,standard full-resolution U-Net,reference
+next_generation_screen__ctpf_subpixel_b8d3,next_generation_screen,ctpf_subpixel_b8d3,ctpf_subpixel_b8d3,"shared equidistant-pair stem, low-resolution distance gate and subpixel residual U-Net",temporally explicit reconstruction
+next_generation_screen__subpixel_dense_refiner_b8d3,next_generation_screen,subpixel_dense_refiner_b8d3,subpixel_dense_refiner_b8d3,subpixel residual U-Net with one dense bottleneck residual block,PSNR with regular GPU kernels
+next_generation_screen__subpixel_naf_lite_b8d3,next_generation_screen,subpixel_naf_lite_b8d3,subpixel_naf_lite_b8d3,2 x pixel unshuffle with one deepest-scale NAF block,PSNR at retained runtime
+next_generation_screen__subpixel_projected_decoder_b8d3,next_generation_screen,subpixel_projected_decoder_b8d3,subpixel_projected_decoder_b8d3,subpixel residual U-Net with projected-add decoder fusion,runtime at retained fidelity
+next_generation_screen__subpixel_psnr_aligned_b8d3,next_generation_screen,subpixel_psnr_aligned_b8d3,subpixel_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3,PSNR without inference overhead
+next_generation_screen__subpixel_residual_b8d3,next_generation_screen,subpixel_residual_b8d3,subpixel_residual_b8d3,"2 x pixel unshuffle, residual U-Net, pixel shuffle",runtime
+objective_controlled_structure_screen__baseline_psnr_aligned_b8d3,objective_controlled_structure_screen,baseline_psnr_aligned_b8d3,baseline_psnr_aligned_b8d3,standard full-resolution U-Net,PSNR-aligned full-resolution reference
+objective_controlled_structure_screen__ctpf_psnr_aligned_b8d3,objective_controlled_structure_screen,ctpf_psnr_aligned_b8d3,ctpf_psnr_aligned_b8d3,same inference graph as ctpf_subpixel_b8d3,temporally explicit PSNR
+objective_controlled_structure_screen__subpixel_dense_refiner_psnr_aligned_b8d3,objective_controlled_structure_screen,subpixel_dense_refiner_psnr_aligned_b8d3,subpixel_dense_refiner_psnr_aligned_b8d3,same inference graph as subpixel_dense_refiner_b8d3,PSNR with regular GPU kernels
+objective_controlled_structure_screen__subpixel_naf_lite_psnr_aligned_b8d3,objective_controlled_structure_screen,subpixel_naf_lite_psnr_aligned_b8d3,subpixel_naf_lite_psnr_aligned_b8d3,same inference graph as subpixel_naf_lite_b8d3,quality-heavy PSNR
+objective_controlled_structure_screen__subpixel_psnr_aligned_b8d3,objective_controlled_structure_screen,subpixel_psnr_aligned_b8d3,subpixel_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3,PSNR without inference overhead
+original_di_mse__original_di_unet_mse,original_di_mse,original_di_unet_mse,original_di_unet_mse,same inference graph as original_di_unet_mae; objective change only,objective confound control for the reproduction
+original_di_reproduction__original_di_unet_mae,original_di_reproduction,original_di_unet_mae,original_di_unet_mae,direct centre-frame output without anchor or residual path,original DeepInterpolation architecture reproduction
+paper_evidence_v1__paper_fullres_b8d3_mae,paper_evidence_v1,paper_fullres_b8d3_mae,paper_fullres_b8d3_mae,full-resolution B8-D3 temporal-mean residual U-Net,factorial full-resolution MAE arm
+paper_evidence_v1__paper_fullres_b8d3_mse,paper_evidence_v1,paper_fullres_b8d3_mse,paper_fullres_b8d3_mse,same inference graph as paper_fullres_b8d3_mae,factorial full-resolution MSE arm
+paper_evidence_v1__paper_fullres_b8d4_mse,paper_evidence_v1,paper_fullres_b8d4_mse,paper_fullres_b8d4_mse,full-resolution B8-D4 temporal-mean residual U-Net,higher-capacity quality reference
+paper_evidence_v1__paper_subpixel_b8d3_mae,paper_evidence_v1,paper_subpixel_b8d3_mae,paper_subpixel_b8d3_mae,"2 x pixel unshuffle, B8-D3 residual U-Net and pixel shuffle",factorial subpixel MAE arm
+paper_evidence_v1__paper_subpixel_b8d3_mse,paper_evidence_v1,paper_subpixel_b8d3_mse,paper_subpixel_b8d3_mse,same inference graph as paper_subpixel_b8d3_mae,factorial subpixel MSE arm
+paper_evidence_v1__paper_ctpf_subpixel_b8d3_mse,paper_evidence_v1,paper_ctpf_subpixel_b8d3_mse,paper_ctpf_subpixel_b8d3_mse,same inference graph as ctpf_subpixel_b8d3,explicit temporal pair fusion
+paper_evidence_v1__paper_subpixel_dense_b8d3_mse,paper_evidence_v1,paper_subpixel_dense_b8d3_mse,paper_subpixel_dense_b8d3_mse,same inference graph as subpixel_dense_refiner_b8d3,regular low-resolution capacity
+paper_evidence_v1__paper_subpixel_naf_lite_b8d3_mse,paper_evidence_v1,paper_subpixel_naf_lite_b8d3_mse,paper_subpixel_naf_lite_b8d3_mse,same inference graph as subpixel_naf_lite_b8d3,small-operator restoration capacity
+paper_evidence_v1__temporal_mean,paper_evidence_v1,temporal_mean,temporal_mean,Parameter-free centre-excluded temporal mean,Compare reconstruction to the mean anchor
+quick_screen__adaptive_anchor_b8d3,quick_screen,adaptive_anchor_b8d3,adaptive_anchor_b8d3,1 x 1 temporal gate plus baseline residual U-Net,PSNR
+quick_screen__baseline_b8d3,quick_screen,baseline_b8d3,baseline_b8d3,standard full-resolution U-Net,reference
+quick_screen__consensus_attention_b8d3,quick_screen,consensus_attention_b8d3,consensus_attention_b8d3,half-resolution temporal attention anchor plus baseline residual U-Net,PSNR and temporal selectivity
+quick_screen__lowres_heavy_residual,quick_screen,lowres_heavy_residual,lowres_heavy_residual,"6-12-24 encoder, 80-channel bottleneck, temporal-mean residual",runtime at retained fidelity
+quick_screen__mean_residual_b8d3,quick_screen,mean_residual_b8d3,mean_residual_b8d3,baseline U-Net plus parameter-free temporal anchor,PSNR and convergence
+quick_screen__naf_bottleneck_residual,quick_screen,naf_bottleneck_residual,naf_bottleneck_residual,standard U-Net with two low-resolution NAF blocks,PSNR
+quick_screen__rep_residual_b8d3,quick_screen,rep_residual_b8d3,rep_residual_b8d3,multi-branch training; fused standard convolution inference,PSNR without deployment overhead
+quick_screen__subpixel_residual_b8d3,quick_screen,subpixel_residual_b8d3,subpixel_residual_b8d3,"2 x pixel unshuffle, residual U-Net, pixel shuffle",runtime
+relative_frontier_screen__slimmable_psnr_aligned_b8d3,relative_frontier_screen,slimmable_psnr_aligned_b8d3,slimmable_psnr_aligned_b8d3,G4 geometry with nested channel slices at widths 1.0/0.5/0.25,single-model multi-operating-point frontier
+relative_frontier_screen__subpixel4_psnr_aligned_b8d3,relative_frontier_screen,subpixel4_psnr_aligned_b8d3,subpixel4_psnr_aligned_b8d3,"4 x pixel unshuffle, B8-D3 residual U-Net and pixel shuffle",extreme computation relocation
+relative_frontier_screen__subpixel_psnr_aligned_b8d3,relative_frontier_screen,subpixel_psnr_aligned_b8d3,subpixel_psnr_aligned_b8d3,same inference graph as subpixel_residual_b8d3,PSNR without inference overhead
+single_seed_confirmation__baseline_b8d3,single_seed_confirmation,baseline_b8d3,baseline_b8d3,standard full-resolution U-Net,reference
+single_seed_confirmation__subpixel_naf_lite_b8d3,single_seed_confirmation,subpixel_naf_lite_b8d3,subpixel_naf_lite_b8d3,2 x pixel unshuffle with one deepest-scale NAF block,PSNR at retained runtime
+single_seed_confirmation__subpixel_partial_naf_half_b8d3,single_seed_confirmation,subpixel_partial_naf_half_b8d3,subpixel_partial_naf_half_b8d3,2 x pixel unshuffle with half-channel deepest-scale NAF,PSNR at reduced NAF latency
+single_seed_confirmation__subpixel_residual_b8d3,single_seed_confirmation,subpixel_residual_b8d3,subpixel_residual_b8d3,"2 x pixel unshuffle, residual U-Net, pixel shuffle",runtime
+subpixel4_width_test__subpixel4_psnr_aligned_b8d3,subpixel4_width_test,subpixel4_psnr_aligned_b8d3,subpixel4_psnr_aligned_b8d3,"4 x pixel unshuffle, B8-D3 residual U-Net and pixel shuffle",extreme computation relocation
+subpixel4_width_test__subpixel4_wide16_psnr_aligned_b8d3,subpixel4_width_test,subpixel4_wide16_psnr_aligned_b8d3,subpixel4_wide16_psnr_aligned_b8d3,"4 x pixel unshuffle with features (16, 32, 64)",effective-width corollary test (F=16)
+subpixel4_width_test__subpixel4_wide32_psnr_aligned_b8d3,subpixel4_width_test,subpixel4_wide32_psnr_aligned_b8d3,subpixel4_wide32_psnr_aligned_b8d3,"4 x pixel unshuffle with features (32, 64, 128)",effective-width corollary test (F=32)
+targeted_screen__baseline_b8d3,targeted_screen,baseline_b8d3,baseline_b8d3,standard full-resolution U-Net,reference
+targeted_screen__subpixel_adaptive_anchor_b8d3,targeted_screen,subpixel_adaptive_anchor_b8d3,subpixel_adaptive_anchor_b8d3,2 x pixel unshuffle with a 1 x 1 temporal anchor,PSNR at retained runtime
+targeted_screen__subpixel_detail_fusion_b8d3,targeted_screen,subpixel_detail_fusion_b8d3,subpixel_detail_fusion_b8d3,2 x pixel unshuffle plus one shallow full-resolution correction,MAE and PSNR at retained runtime
+targeted_screen__subpixel_naf_lite_b8d3,targeted_screen,subpixel_naf_lite_b8d3,subpixel_naf_lite_b8d3,2 x pixel unshuffle with one deepest-scale NAF block,PSNR at retained runtime
+targeted_screen__subpixel_residual_b8d3,targeted_screen,subpixel_residual_b8d3,subpixel_residual_b8d3,"2 x pixel unshuffle, residual U-Net, pixel shuffle",runtime
+additional_recording_validation__subpixel_psnr_aligned_b8d3,additional_recording_validation,Additional-recording validation (retrained G4),subpixel_psnr_aligned_b8d3,Fixed G4-w2 design trained separately on 02.00 and 04.00,Evaluate the fixed design after training on additional recordings
+attribution__paired_effects,attribution,paired_effects,paired_effects,"Objective, placement, depth and mechanism paired differences",Separate the effect of the loss function from the computation location
+standard_ssim__paper_fullres_b8d3_mse,standard_ssim,paper_fullres_b8d3_mse,paper_fullres_b8d3_mse,"11x11 Gaussian local SSIM, sigma1.5, valid support",Measure standard local structural similarity separately from global gSSIM
+standard_ssim__paper_subpixel_b8d3_mse,standard_ssim,paper_subpixel_b8d3_mse,paper_subpixel_b8d3_mse,"11x11 Gaussian local SSIM, sigma1.5, valid support",Measure standard local structural similarity separately from global gSSIM
+sequence_timing__g4,sequence_timing,g4,g4,Sequential TIFF-to-output processing,"Measure full processing cost including I/O, preprocessing and transfers"
+sequence_timing__g2,sequence_timing,g2,g2,Sequential TIFF-to-output processing,"Measure full processing cost including I/O, preprocessing and transfers"
+streaming_forward__original_di,streaming_forward,original_di,original_di,Context-dependent streaming model forward,Report the original w30 and deployment w2 operating points
+streaming_forward__g4_w2,streaming_forward,g4_w2,g4_w2,Context-dependent streaming model forward,Report the original w30 and deployment w2 operating points
+simulation__g4,simulation,g4,g4,2x sub-pixel mean-anchored residual model,Measure clean-reference error and transient response under Poisson/Gaussian noise
+simulation__g2,simulation,g2,g2,Full-resolution MSE compact control,Measure clean-reference error and transient response under Poisson/Gaussian noise
+simulation__g8,simulation,g8,g8,4x sub-pixel compact model,Measure clean-reference error and transient response under Poisson/Gaussian noise
+simulation__temporal_mean,simulation,temporal_mean,temporal_mean,Parameter-free four-neighbour mean,Measure clean-reference error and transient response under Poisson/Gaussian noise
+simulation__constrained,simulation,constrained,constrained,Shared spatial encoder with dynamic-constrained temporal estimator,Measure clean-reference error and transient response under Poisson/Gaussian noise
+simulation__learned,simulation,learned,learned,Same shared spatial backbone with learned 1x1 temporal fusion,Measure clean-reference error and transient response under Poisson/Gaussian noise
+official_roi__g4_w2,official_roi,g4_w2,g4_w2,Official ROI trace projection,Measure trace variability and dynamic range
+official_roi__g2_w2,official_roi,g2_w2,g2_w2,Official ROI trace projection,Measure trace variability and dynamic range
+official_roi__original_di_w30,official_roi,original_di_w30,original_di_w30,Official ROI trace projection,Measure trace variability and dynamic range
+official_roi__temporal_mean_w2,official_roi,temporal_mean_w2,temporal_mean_w2,Official ROI trace projection,Measure trace variability and dynamic range
+official_roi__temporal_mean_w30,official_roi,temporal_mean_w30,temporal_mean_w30,Official ROI trace projection,Measure trace variability and dynamic range
+estimated_noise_floor__g4_w2,estimated_noise_floor,g4_w2,g4_w2,Temporal-variogram noise-floor estimate,Compare estimated input and output variability
+estimated_noise_floor__g2_w2,estimated_noise_floor,g2_w2,g2_w2,Temporal-variogram noise-floor estimate,Compare estimated input and output variability
+estimated_noise_floor__original_di_w30,estimated_noise_floor,original_di_w30,original_di_w30,Temporal-variogram noise-floor estimate,Compare estimated input and output variability
+estimated_noise_floor__g4_w30,estimated_noise_floor,g4_w30,g4_w30,Temporal-variogram noise-floor estimate,Compare estimated input and output variability
+estimated_noise_floor__temporal_mean_w2,estimated_noise_floor,temporal_mean_w2,temporal_mean_w2,Temporal-variogram noise-floor estimate,Compare estimated input and output variability
+estimated_noise_floor__temporal_mean_w30,estimated_noise_floor,temporal_mean_w30,temporal_mean_w30,Temporal-variogram noise-floor estimate,Compare estimated input and output variability
+suite2p__raw,suite2p,raw,raw,Raw movie,Measure detected ROI count and median relative trace noise
+suite2p__g4_denoised,suite2p,g4_denoised,g4_denoised,G4-w2 processed movie,Measure detected ROI count and median relative trace noise
+shared_encoder_cost__g4,shared_encoder_cost,g4,g4,Independent frame encoding; g4,Measure feature reuse cost before committing to real-recording training
+shared_encoder_cost__learned,shared_encoder_cost,learned,learned,Independent frame encoding; learned,Measure feature reuse cost before committing to real-recording training
+shared_encoder_cost__constrained_uncached,shared_encoder_cost,constrained_uncached,constrained_uncached,Independent frame encoding; constrained_uncached,Measure feature reuse cost before committing to real-recording training
+shared_encoder_cost__constrained_cached,shared_encoder_cost,constrained_cached,constrained_cached,Independent frame encoding; constrained_cached,Measure feature reuse cost before committing to real-recording training
+context_cost__g4_w2,context_cost,g4_w2,g4_w2,g4 w2,Measure pooled context-bypass inference cost
+context_cost__g4_w4,context_cost,g4_w4,g4_w4,g4 w4,Measure pooled context-bypass inference cost
+context_cost__core_only,context_cost,core_only,core_only,core only,Measure pooled context-bypass inference cost
+context_cost__outer_linear,context_cost,outer_linear,outer_linear,outer linear,Measure pooled context-bypass inference cost
+context_cost__outer_capacity,context_cost,outer_capacity,outer_capacity,outer capacity,Measure pooled context-bypass inference cost
+context_cost__nearest_capacity,context_cost,nearest_capacity,nearest_capacity,nearest capacity,Measure pooled context-bypass inference cost
+context_cost__diff_init_w4,context_cost,diff_init_w4,diff_init_w4,diff init w4,Measure pooled context-bypass inference cost
+window_cost__g4_w2,window_cost,g4_w2,g4_w2,g4 w2,Measure wider-context arithmetic and latency
+window_cost__g4_w4,window_cost,g4_w4,g4_w4,g4 w4,Measure wider-context arithmetic and latency
+window_cost__g4_w4_498,window_cost,g4_w4_498,g4_w4_498,g4 w4 498,Measure wider-context arithmetic and latency
+shared_width_sweep__slimmable_1.0,shared_width_sweep,slimmable_1.0,slimmable_1.0,Select channel fraction 1.0 from one trained model,Measure shared-weight width operating points
+shared_width_sweep__slimmable_0.5,shared_width_sweep,slimmable_0.5,slimmable_0.5,Select channel fraction 0.5 from one trained model,Measure shared-weight width operating points
+shared_width_sweep__slimmable_0.25,shared_width_sweep,slimmable_0.25,slimmable_0.25,Select channel fraction 0.25 from one trained model,Measure shared-weight width operating points
+relocation_cost__g4,relocation_cost,g4,g4,2x rearrangement,Measure whether the additional convolution reduction lowers forward time
+relocation_cost__subpixel4,relocation_cost,subpixel4,subpixel4,4x rearrangement,Measure whether the additional convolution reduction lowers forward time
+residual_diagnostics__directionality,residual_diagnostics,directionality,directionality,Fixed G4 reconstruction residual,Measure scan-line directional correlations
+residual_diagnostics__row_decomposition,residual_diagnostics,row_decomposition,row_decomposition,Fixed G4 reconstruction residual,Measure neighbour transfer and target-row residual association
+residual_diagnostics__noise_transfer,residual_diagnostics,noise_transfer,noise_transfer,Fixed G4 reconstruction residual,Measure regression onto frame-difference noise proxies
