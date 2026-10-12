@@ -1,12 +1,12 @@
-# Temporal-mean-anchored compact residual reconstruction
+# TMASR-Net: efficient self-supervised sequence reconstruction
 
 Updated 12 October 2026. [All completed experiments](../results/README.md), [experiment catalog](../results/experiments.csv) and [final metrics](../results/results.csv) provide the numerical record. This report explains the principal result; the English manuscript is maintained locally.
 
 ## Design and contribution
 
-G4 predicts an excluded centre frame from its temporal neighbours. Their full-resolution mean is the output anchor. PixelUnshuffle(2) rearranges the input into four spatial phases; a compact U-Net learns a residual on this half-resolution grid. Encoder widths are 8/16/32, with a 64-channel bottleneck, concatenated skips and decoder widths 32/16/8. A zero-initialized four-phase head starts from the mean, and PixelShuffle restores the correction before addition to the anchor.
+The Temporal-Mean-Anchored Sub-pixel Residual Network (TMASR-Net; G4) predicts an excluded centre frame from its temporal neighbours. It adapts DeepInterpolation's sequence-learning principle by combining native-resolution temporal averaging with joint neighbour processing in a compact spatial representation and learned residual correction. The entire prediction is trained on noisy targets without clean reference images. Their full-resolution mean is the output anchor. PixelUnshuffle(2) rearranges the input into four spatial phases; a compact U-Net learns a residual on this half-resolution grid. Encoder widths are 8/16/32, with a 64-channel bottleneck, concatenated skips and decoder widths 32/16/8. A zero-initialized four-phase head starts from the mean, and PixelShuffle restores the correction before addition to the anchor.
 
-The contribution is a measured reconstruction–cost operating point. At matched w30, both G4 and the original-architecture DI reproduction consume 60 centre-excluded frames. The original hierarchy uses 64/128/256/512/1024 channels and direct prediction.
+The contribution is the integrated reconstruction framework and its measured quality–parameter–runtime performance. Individual averaging, rearrangement and residual mechanisms are credited design foundations. At matched w30, both G4 and the original-architecture DI reproduction consume 60 centre-excluded frames. The original hierarchy uses 64/128/256/512/1024 channels and direct prediction.
 
 | Quantity | Original-architecture DI | G4 |
 |---|---:|---:|

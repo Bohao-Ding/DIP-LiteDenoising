@@ -1,6 +1,6 @@
 # Final completed experiment results
 
-G4 combines a full-resolution temporal-mean anchor, a compact phase-domain residual U-Net and a zero-initialized output head. The primary contribution is retention of measured reconstruction PSNR with far less computation than the original DeepInterpolation architecture.
+TMASR-Net (G4), the Temporal-Mean-Anchored Sub-pixel Residual Network, combines centre-excluded sequence self-supervision with a full-resolution temporal mean, compact spatial representation and a zero-initialized residual head. It learns directly from noisy sequences without clean training references. The primary result is retention of measured reconstruction PSNR with substantially fewer parameters and faster model execution than the original DeepInterpolation architecture.
 
 This page shares 124 experiment entries and 16,677 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
 
@@ -19,6 +19,19 @@ At w30 (60 excluded-centre context frames), G4 has **139,204** parameters versus
 | 03.00 | 13.2788 | 13.3705 | 13.3642 | -0.0063 |
 
 Values are seed-0 validation PSNR (dB), after 75 epochs and objective-specific validation selection. The MAE-DI/G4 three-seed results and extra completed MSE-DI seed are separately labelled in the CSV. The objective-controlled G1--G5 study finds +0.2450/+0.2435 dB for MSE versus MAE and -0.0020/-0.0036 dB for half-grid versus full-grid placement. Its averaged G4 convolution cost is 1.464 GFLOPs versus G2's 5.334 GFLOPs.
+
+## Model names and frozen experiment codes
+
+| Paper name | Experiment code |
+|---|---|
+| Full-resolution MAE | G1 |
+| Full-resolution MSE | G2 |
+| Sub-pixel MAE | G3 |
+| TMASR-Net | G4 |
+| Deeper full-resolution MSE | G5 |
+| 4× sub-pixel residual model | G8 |
+
+Names are presentation aliases. Existing registry strings, checkpoint keys and CSV experiment identifiers retain their original spelling. Spatial restoration mechanisms provide design foundations; the contribution is their adaptation and integration into centre-excluded noisy-sequence reconstruction and its measured quality–cost performance.
 
 ## Reading the result table
 
