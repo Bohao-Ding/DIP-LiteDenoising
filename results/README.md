@@ -2,7 +2,7 @@
 
 G4 combines a full-resolution temporal-mean anchor, a compact phase-domain residual U-Net and a zero-initialized output head. The primary contribution is retention of measured reconstruction PSNR with far less computation than the original DeepInterpolation architecture.
 
-This page shares 124 experiment entries and 16,645 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
+This page shares 124 experiment entries and 16,677 scalar endpoint rows. The capacity collection contains 405 trained runs and 135 deterministic baseline evaluations; the formal attribution study contains 252 trained runs plus nine temporal means. Normally completed controls are included whether their numerical result improves the baseline or not.
 
 - [Experiment names, changes and purposes](experiments.csv)
 - [Complete final scalar results](results.csv)
@@ -27,6 +27,25 @@ Values are seed-0 validation PSNR (dB), after 75 epochs and objective-specific v
 PSNR uses each noisy target frame's range; clean PSNR is a separate synthetic diagnostic endpoint. Historical gSSIM and standard local SSIM are distinct. Frozen evaluation segments were previously inspected. `model forward`, `sequence processing` and `GPU-resident sequence compute` are separate timing scopes. Device and warmup details are supplied per row; a missing recorded GPU name is not inferred. The 4060 Laptop measurements are not reassigned to the 5070 Ti. Conv3d arithmetic includes the temporal kernel; the adapted DeepCAD-RT arm reports 254.611 GFLOPs at 512x512 and 242.800 GFLOPs at 498x490. Acquisition waiting is excluded from process timing.
 
 Additional-recording validation trains on 02.00/04.00; it is not zero-shot transfer. Suite2p counts detected ROIs, and trace variability uses each condition's detected set. The mean anchor, clean image error, amplitude response, noise-floor estimates and ROI counts are different endpoints.
+
+## Corrected event ROC (12 October 2026)
+
+The original-frame event number is now mapped to the prediction row for both peak and baseline windows. Existing seed-0 simulation checkpoints were re-evaluated without training. The saved ROC curves now include both endpoints and preserve threshold ordering. The scalar AUC uses pairwise ranking with half credit for ties.
+
+Each condition has 30 events and 708 overlapping no-event windows. Sensitivity is measured at the negative-score 95th percentile; the empirical FPR is reported rather than assumed to be at most 5%. Bootstrap intervals describe resampling of these diagnostic scores, not independent movies or biological replication.
+
+| Model | Poisson peak | AUC | Descriptive 95% bootstrap interval | Sensitivity (%) | Empirical FPR (%) |
+|---|---:|---:|---|---:|---:|
+| g4 | 16 | 1.000000 | 1.000000--1.000000 | 100.0 | 5.085 |
+| g4 | 32 | 1.000000 | 1.000000--1.000000 | 100.0 | 5.085 |
+| g2 | 16 | 0.999812 | 0.999247--1.000000 | 100.0 | 5.085 |
+| g2 | 32 | 1.000000 | 1.000000--1.000000 | 100.0 | 5.085 |
+| g8 | 16 | 0.997646 | 0.994114--0.999953 | 100.0 | 4.802 |
+| g8 | 32 | 0.999341 | 0.997974--1.000000 | 100.0 | 5.085 |
+| temporal_mean | 16 | 0.998258 | 0.995009--0.999953 | 100.0 | 5.085 |
+| temporal_mean | 32 | 0.999153 | 0.997363--1.000000 | 100.0 | 4.944 |
+
+G4 AUC is 1.000000 at both noise levels. All arms reach 100% sensitivity here, so this diagnostic offers limited separation; amplitude and peak-time errors remain separate dynamic endpoints. [Correction and interpretation](../docs/event_roc_correction.md).
 
 ## Capacity and block study
 

@@ -27,6 +27,10 @@ The 405 trained capacity runs compare width, depth and block choices, alongside 
 
 Clean-reference simulation reports G4/G2 PSNR of 42.22/44.08 dB and relative amplitude error of 0.390/0.491. Standard local SSIM is separate from whole-frame gSSIM: five-seed G4/G2 means are 0.7012/0.7005, 0.9711/0.9710 and 0.6008/0.6013. Suite2p ROI counts change from 245/434/412 to 437/816/1176, accompanied by lower median relative trace noise. Past-only offsets (-2,-1) retain validation PSNR within 0.025 dB of matched symmetric runs. The fixed design, separately retrained on 02.00/04.00, gives 26.6323/34.6562 dB; this is additional-recording validation.
 
+## Corrected event ROC
+
+The [corrected diagnostic](event_roc_correction.md) uses original-frame lookup for both peak and baseline windows. G4 AUC is 1.000000 at peaks 16/32; the four arms span 0.997646–1.000000. All reach 100% sensitivity at the negative-score 95th percentile, with empirical FPR 4.802–5.085%. Descriptive bootstrap intervals and thresholds are shared in the scalar table. The ceiling result does not distinguish transient-amplitude fidelity. Existing weights were evaluated without training.
+
 ## Measurement definitions
 
 Real-data PSNR uses the observed centre frame's intensity range; clean PSNR refers to synthetic ground truth. Historical evaluation segments were previously inspected. Seed counts and split labels accompany every endpoint. ROI counts and trace variability describe the detected sets and are not measures of detection accuracy.
