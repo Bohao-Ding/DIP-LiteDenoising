@@ -14,7 +14,7 @@ The [event ROC correction](docs/event_roc_correction.md) maps original frame num
 
 ![Original DI and TMASR-Net (G4) information flow](results/figure/architecture_comparison.png)
 
-This explanatory schematic was generated and revised with OpenAI imagegen on 12 October 2026; the tool interface did not expose its model version. The information flow and dimensions were checked against the implementation. Numeric plots and results use saved measurements.
+The current schematic is [editable SVG](results/figure/architecture_comparison.svg), redrawn with R/grid and svglite on 13 October 2026 using Codex-assisted code. An earlier OpenAI imagegen draft informed the layout; its interface did not expose a model version. Channels, dimensions, skips and target paths were checked against the implementation. Numeric plots and results use saved measurements.
 
 DIP-LiteDenoising is a compact PyTorch implementation of the
 U-Net model family studied for DeepInterpolation-style self-supervised temporal

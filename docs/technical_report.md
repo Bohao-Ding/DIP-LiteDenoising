@@ -41,6 +41,6 @@ Conv3d arithmetic includes the temporal kernel. The adapted DeepCAD-RT arm uses 
 
 ## Figure and sharing
 
-[The architecture schematic](../results/figure/architecture_comparison.png) was generated and revised using OpenAI imagegen on 12 October 2026; the interface did not expose a model version. Labels, dimensions and centre-exclusion paths were checked against the implementation. It explains the model and contains no generated empirical image evidence.
+The architecture schematic is available as [editable SVG](../results/figure/architecture_comparison.svg) and a [PNG preview](../results/figure/architecture_comparison.png). It was redrawn with R/grid and svglite on 13 October 2026 using Codex-assisted code, adapting the layout of an earlier imagegen draft whose model version was not reported. Labels, dimensions, skips and centre-exclusion paths were checked against the implementation. It explains the model and contains no experimental image evidence.
 
 The new sharing package contains final endpoint tables and explanations. Training histories, interrupted attempts, new configurations/scripts, weights and checksum manifests are retained locally rather than added to this release. Existing source and frozen public evidence remain available in their original repository locations.

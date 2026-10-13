@@ -37,7 +37,7 @@ Conv3d 算术计入时间核。适配的 DeepCAD-RT 使用仅空间池化和时�
 
 ## 图示与分享
 
-[框架图](../results/figure/architecture_comparison.png)使用 OpenAI imagegen 于 2026-10-12 生成并修正；接口没有暴露模型版本。标签、尺寸和中心帧排除路径已对照实现核查。它用于解释模型，不作为生成的实测图像证据。
+框架图提供[可编辑 SVG](../results/figure/architecture_comparison.svg)和[PNG 预览](../results/figure/architecture_comparison.png)。它由 R/grid、svglite 于 2026-10-13 重绘，Codex 辅助代码，沿用早期 imagegen 草图的布局；该草图接口未报告模型版本。标签、尺寸、跳连和中心排除路径已对照实现核查。图件仅解释模型，实验结果保持。
 
 本轮新增分享包为最终指标和解释文件。训练历史、中断记录、新配置/脚本、权重和校验清单留在本地。既有源码及冻结公开证据继续保持原有仓库位置。
 

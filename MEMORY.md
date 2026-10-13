@@ -26,3 +26,7 @@ G4贡献为时间均值锚定的紧凑子像素残差模型；匹配w30参数139
 ## 2026-10-12 TMASR-Net 名称与贡献同步
 
 G4 的论文名称为 Temporal-Mean-Anchored Sub-pixel Residual Network（TMASR-Net）；旧代码及CSV标识保持。中英文首页、解释报告和完整结果页强调连续序列无干净参考自监督重建的整体架构与最终质量—参数—速度表现，补充G1–G5/G8名称对应。解释性框架图更新TMASR-Net名称与信息流；论文数值图已在本地改用R/ggplot2，全部最终实验数值不变。英文全文及新绘图脚本留本地。
+
+## 2026-10-13 纯矢量框架图
+
+Figure1用R/grid/svglite复刻，公开新增results/figure/architecture_comparison.svg并同步PNG预览。114个文字元素、无嵌入位图，DI/TMASR的16个层级及参数通过本地CPU结构检查。中英文README和解释报告同步当前工具与早期imagegen草图来源。完整实验CSV未改，论文全文和审稿记录仍留本地；未训练或GPU重评、测速。

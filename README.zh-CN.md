@@ -14,7 +14,7 @@
 
 ![原版 DI 与 TMASR-Net（G4）的信息流](results/figure/architecture_comparison.png)
 
-此图为解释性框架图，由 OpenAI imagegen 于 2026-10-12 生成并修正；接口没有暴露图像模型版本。图中文字、通道、尺寸及信息路径已对照实现核查，实验数值来自保存的测量结果。
+当前框架图为[可编辑 SVG](results/figure/architecture_comparison.svg)，由 R/grid、svglite 于 2026-10-13 重绘，Codex 辅助代码。早期 imagegen 草图提供布局参考，接口未报告模型版本；文字、通道、尺寸、跳连及目标路径已对照实现核查。实验数值保持不变。
 
 DIP-LiteDenoising 是一个紧凑的 PyTorch 项目，用于实现和研究
 DeepInterpolation 式自监督时间预测中的 U-Net 模型族。模型从目标中心帧两侧的邻近帧
