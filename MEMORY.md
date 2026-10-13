@@ -30,3 +30,9 @@ G4 的论文名称为 Temporal-Mean-Anchored Sub-pixel Residual Network（TMASR-
 ## 2026-10-13 纯矢量框架图
 
 Figure1用R/grid/svglite复刻，公开新增results/figure/architecture_comparison.svg并同步PNG预览。114个文字元素、无嵌入位图，DI/TMASR的16个层级及参数通过本地CPU结构检查。中英文README和解释报告同步当前工具与早期imagegen草图来源。完整实验CSV未改，论文全文和审稿记录仍留本地；未训练或GPU重评、测速。
+
+## 2026-10-13 Figure 1 回退与后续证据核对
+
+按作者要求恢复SVG重绘前的TMASR-Net图片，研究Git 28f323d与公开Git 97eaf0c的PNG原字节一致。Figure 1的SVG/PDF移出论文和公开目录，留在研究artifacts/figure1_rollback_20261013/rejected_vector；历史矢量脚本仅写入该归档，不覆盖当前稿件。最新审稿文字修润、数值图2–4、论文数据和公开实验CSV保持。
+
+实际CSV核对：w30三记录TMASR-Net及DI-MAE均有seed0/1/2；DI-MSE为01.00 seed0/1、01.01 seed0、03.00 seed0。三种子配对尚缺五项DI-MSE，不是整个项目没有重复实验；G1–G5已有五种子。外部已有改编DeepCAD-RT结构对照，FAST/CellMincer尚无直接实验。建议先补五项DI-MSE，再FAST，按贡献需要决定CellMincer与完整流程测速。详情见研究docs/research/followup_evidence_20261013.md和followup_inventory.json。本次未训练、未GPU评估或测速。
